@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_main"
+    app:startDestination="@id/splash_fragment">
+
+    <!-- SplashFragment -->
+    <fragment
+        android:id="@+id/splash_fragment"
+        android:name="com.example.spacex_app.presentation.fragment.SplashFragment"
+        android:label="@string/header_splash"
+        tools:layout="@layout/fragment_splash">
+
+        <action
+            android:id="@+id/action_splash_fragment_to_login_fragment"
+            app:destination="@id/login_fragment" />
+
+        <action
+            android:id="@+id/action_splash_fragment_to_home_fragment"
+            app:destination="@id/home_fragment" />
+    </fragment>
+
+    <!-- LoginFragment -->
+    <fragment
+        android:id="@+id/login_fragment"
+        android:name="com.example.spacex_app.presentation.fragment.LoginFragment"
+        android:label="@string/header_login"
+        tools:layout="@layout/fragment_login">
+
+        <action
+            android:id="@+id/action_login_fragment_to_registration_fragment"
+            app:destination="@id/registration_fragment" />
+        <action
+            android:id="@+id/action_login_fragment_to_home_fragment"
+            app:destination="@id/home_fragment" />
+    </fragment>
+
+    <!-- RegistrationFragment -->
+    <fragment
+        android:id="@+id/registration_fragment"
+        android:name="com.example.spacex_app.presentation.fragment.RegistrationFragment"
+        android:label="@string/header_registration"
+        tools:layout="@layout/fragment_registration">
+
+        <action
+            android:id="@+id/action_registration_fragment_to_home_fragment"
+            app:destination="@id/home_fragment" />
+    </fragment>
+
+    <!--  HomeFragment  -->
+    <fragment
+        android:id="@+id/home_fragment"
+        android:name="com.example.spacex_app.presentation.fragment.HomeFragment"
+        android:label="@string/header_home"
+        tools:layout="@layout/fragment_home"/>
+
+    <!-- VehiclesFragment -->
+    <fragment
+        android:id="@+id/vehicles_fragment"
+        android:name="com.example.spacex_app.presentation.fragment.VehiclesFragment"
+        android:label="@string/header_vehicles"
+        tools:layout="@layout/fragment_vehicles"/>
+
+    <!-- UpcomingFragment -->
+    <fragment
+        android:id="@+id/upcoming_fragment"
+        android:name="com.example.spacex_app.presentation.fragment.UpcomingFragment"
+        android:label="@string/header_upcoming"
+        tools:layout="@layout/fragment_upcoming"/>
+
+    <!-- LatestFragment -->
+    <fragment
+        android:id="@+id/latest_fragment"
+        android:name="com.example.spacex_app.presentation.fragment.LatestFragment"
+        android:label="@string/header_latest"
+        tools:layout="@layout/fragment_latest"/>
+
+    <!-- CompanyFragment -->
+    <fragment
+        android:id="@+id/company_fragment"
+        android:name="com.example.spacex_app.presentation.fragment.CompanyFragment"
+        android:label="@string/header_company"
+        tools:layout="@layout/fragment_company"/>
+</navigation>

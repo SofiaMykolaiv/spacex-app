@@ -7,4 +7,14 @@
     <string name="bottom_nav_upcoming">Upcoming</string>
     <string name="bottom_nav_latest">Latest</string>
     <string name="bottom_nav_company">Company</string>
+
+    <!--  Headers:  -->
+    <string name="header_splash">Splash</string>
+    <string name="header_login">Login</string>
+    <string name="header_registration">Registration</string>
+    <string name="header_home">Home</string>
+    <string name="header_vehicles">Vehicles</string>
+    <string name="header_upcoming">Upcoming</string>
+    <string name="header_latest">Latest</string>
+    <string name="header_company">Company</string>
 </resources>
