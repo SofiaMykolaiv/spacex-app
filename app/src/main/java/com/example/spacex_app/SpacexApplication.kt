@@ -1,6 +1,9 @@
 package com.example.spacex_app
 
 import android.app.Application
+import com.example.spacex_app.di.networkModule
+import com.example.spacex_app.di.repositoryModule
+import com.example.spacex_app.di.serviceModule
 import com.example.spacex_app.di.viewModelModule
 import com.facebook.stetho.Stetho
 import org.koin.android.ext.koin.androidContext
@@ -29,11 +32,11 @@ class SpacexApplication : Application() {
         androidContext(this@SpacexApplication)
         modules(
             listOf(
-                viewModelModule
-//                repositoryModule,
-//                networkModule,
-//                serviceModule,
-//                databaseModule,
+                viewModelModule,
+                repositoryModule,
+                networkModule,
+                serviceModule
+//               databaseModule,
 //                daoModule
             )
         )
