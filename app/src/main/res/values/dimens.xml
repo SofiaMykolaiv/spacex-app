@@ -20,7 +20,7 @@
     <dimen name="image_size_small">36dp</dimen>
     <dimen name="image_size_default">48dp</dimen>
     <dimen name="image_size_big">250dp</dimen>
-    <dimen name="image_size_item_character">130dp</dimen>
+    <dimen name="image_size_logo">150dp</dimen>
 
     <dimen name="corner_default">16dp</dimen>
 </resources>
