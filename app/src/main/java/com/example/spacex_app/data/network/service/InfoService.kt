@@ -1,6 +1,6 @@
 package com.example.spacex_app.data.network.service
 
-import com.example.spacex_app.data.network.response.InfoResponse
+import com.example.spacex_app.data.network.response.infoResponse.InfoResponse
 import retrofit2.http.GET
 
 interface InfoService {

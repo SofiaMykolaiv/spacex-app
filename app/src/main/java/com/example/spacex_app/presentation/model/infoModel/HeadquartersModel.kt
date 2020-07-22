@@ -1,4 +1,4 @@
-package com.example.spacex_app.presentation.model
+package com.example.spacex_app.presentation.model.infoModel
 
 import android.os.Parcelable
 import kotlinx.android.parcel.Parcelize

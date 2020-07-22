@@ -1,7 +1,6 @@
 package com.example.spacex_app.presentation.model.dragonModel
 
 import android.os.Parcelable
-import com.example.spacex_app.data.network.response.ThrustResponse
 import kotlinx.android.parcel.Parcelize
 
 @Parcelize

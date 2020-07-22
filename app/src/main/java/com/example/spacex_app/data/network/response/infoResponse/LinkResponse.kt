@@ -1,4 +1,4 @@
-package com.example.spacex_app.data.network.response
+package com.example.spacex_app.data.network.response.infoResponse
 
 data class LinkResponse(
     var website: String? = "",

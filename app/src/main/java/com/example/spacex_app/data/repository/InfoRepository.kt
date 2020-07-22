@@ -1,9 +1,8 @@
 package com.example.spacex_app.data.repository
 
-import com.example.spacex_app.data.network.response.InfoResponse
+import com.example.spacex_app.data.network.response.infoResponse.InfoResponse
 import com.example.spacex_app.data.network.service.InfoService
 import org.koin.core.inject
-import org.koin.java.KoinJavaComponent.inject
 
 class InfoRepository: BaseRepository {
 
