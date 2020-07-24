@@ -1,8 +1,11 @@
 package com.example.spacex_app.presentation.fragment
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.lifecycle.Observer
 import com.example.spacex_app.R
+import com.example.spacex_app.presentation.activity.MainActivity
+import com.example.spacex_app.presentation.activity.SignInActivity
 import com.example.spacex_app.presentation.viewmodel.SplashViewModel
 import com.example.spacex_app.utiles.showSimpleErrorDialog
 import org.koin.android.ext.android.inject
@@ -22,7 +25,8 @@ class SplashFragment : BaseFragment<SplashViewModel>() {
 
     private fun observeData() {
         viewModel.splashLiveData.observe(viewLifecycleOwner, Observer {
-            navigateSafe(R.id.action_splash_fragment_to_home_fragment)
+            startActivity(Intent(context, MainActivity::class.java))
+            activity?.finish()
         })
 
         viewModel.errorMessageLiveData.observe(viewLifecycleOwner, Observer { exceptionMessage ->

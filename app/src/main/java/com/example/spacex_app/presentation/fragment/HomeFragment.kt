@@ -8,4 +8,9 @@ class HomeFragment : BaseFragment<HomeViewModel>() {
     override val viewModel by inject<HomeViewModel>()
 
     override fun getLayoutRes() = R.layout.fragment_home
+
+    override fun onBackPressed() {
+        super.onBackPressed()
+        activity?.finish()
+    }
 }
