@@ -5,49 +5,6 @@
     android:id="@+id/nav_main"
     app:startDestination="@id/home_fragment">
 
-    <!-- SplashFragment -->
-    <fragment
-        android:id="@+id/splash_fragment"
-        android:name="com.example.spacex_app.presentation.fragment.SplashFragment"
-        android:label="@string/header_splash"
-        tools:layout="@layout/fragment_splash">
-
-        <action
-            android:id="@+id/action_splash_fragment_to_login_fragment"
-            app:destination="@id/login_fragment" />
-
-        <action
-            android:id="@+id/action_splash_fragment_to_home_fragment"
-            app:destination="@id/home_fragment" />
-    </fragment>
-
-    <!-- LoginFragment -->
-    <fragment
-        android:id="@+id/login_fragment"
-        android:name="com.example.spacex_app.presentation.fragment.LoginFragment"
-        android:label="@string/header_login"
-        tools:layout="@layout/fragment_login">
-
-        <action
-            android:id="@+id/action_login_fragment_to_registration_fragment"
-            app:destination="@id/registration_fragment" />
-        <action
-            android:id="@+id/action_login_fragment_to_home_fragment"
-            app:destination="@id/home_fragment" />
-    </fragment>
-
-    <!-- RegistrationFragment -->
-    <fragment
-        android:id="@+id/registration_fragment"
-        android:name="com.example.spacex_app.presentation.fragment.RegistrationFragment"
-        android:label="@string/header_registration"
-        tools:layout="@layout/fragment_registration">
-
-        <action
-            android:id="@+id/action_registration_fragment_to_home_fragment"
-            app:destination="@id/home_fragment" />
-    </fragment>
-
     <!--  HomeFragment  -->
     <fragment
         android:id="@+id/home_fragment"

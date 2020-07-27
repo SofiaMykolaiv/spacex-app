@@ -1,41 +1,43 @@
 package com.example.spacex_app.presentation.fragment
 
-import android.os.Bundle
-import androidx.lifecycle.Observer
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.spacex_app.R
+import com.example.spacex_app.presentation.adapter.TextAdapter
 import com.example.spacex_app.presentation.viewmodel.HomeViewModel
-import com.example.spacex_app.utiles.showSimpleErrorDialog
+import kotlinx.android.synthetic.main.fragment_home.*
 import org.koin.android.ext.android.inject
 
 class HomeFragment : BaseFragment<HomeViewModel>() {
+
+    private lateinit var textAdapter: TextAdapter
+
     override val viewModel by inject<HomeViewModel>()
 
     override fun getLayoutRes() = R.layout.fragment_home
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-        loadData()
-        observeData()
-    }
-
     override fun onBackPressed() {
         super.onBackPressed()
         activity?.finish()
-    }
 
-    private fun observeData() {
-        viewModel.launchLiveData.observe(viewLifecycleOwner, Observer { launchModel ->
-            val data = launchModel
-        })
-        viewModel.errorMessageLiveData.observe(viewLifecycleOwner, Observer { exceptionMessage ->
-            showSimpleErrorDialog(context, null, exceptionMessage, null, null)
-        })
-        viewModel.loadingLiveData.observe(viewLifecycleOwner, Observer { isLoading ->
-            setLoadingState(isLoading)
-        })
-    }
-
-    private fun loadData() {
-        viewModel.getNextLaunchNetwork()
+        // TODO: remove it later
+        textAdapter = TextAdapter()
+        recycler_view.layoutManager = LinearLayoutManager(activity)
+        recycler_view.adapter = textAdapter
+        textAdapter.textList = arrayListOf(
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12",
+            "13",
+            "14"
+        ).toMutableList()
     }
 }
