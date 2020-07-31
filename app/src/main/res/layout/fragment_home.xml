@@ -2,14 +2,323 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    tools:background="@color/background_color">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recycler_view"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:listitem="@layout/list_item_text">
+        android:layout_height="wrap_content"
+        android:background="@color/background_color"
+        android:orientation="horizontal"
+        android:padding="@dimen/spacing_middle">
 
-    </androidx.recyclerview.widget.RecyclerView>
+        <ImageView
+            android:id="@+id/image_earth"
+            android:layout_width="@dimen/image_size_default"
+            android:layout_height="@dimen/image_size_default"
+            android:src="@drawable/ic_earth"
+            android:tint="@color/white"
+            tools:ignore="ContentDescription" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="@dimen/spacing_middle"
+            android:gravity="center_vertical"
+            android:orientation="vertical"
+            android:padding="@dimen/spacing_quarter">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/home_launched_by"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_size_default"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_quarter"
+                android:textColor="@color/grey"
+                tools:text="It will carry CRS-19 to ISS orbit" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginStart="74dp"
+        android:background="@color/white" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/background_color"
+        android:orientation="horizontal"
+        android:padding="@dimen/spacing_middle">
+
+        <ImageView
+            android:id="@+id/image_date"
+            android:layout_width="@dimen/image_size_default"
+            android:layout_height="@dimen/image_size_default"
+            android:src="@drawable/ic_date"
+            android:tint="@color/white"
+            tools:ignore="ContentDescription" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="@dimen/spacing_middle"
+            android:gravity="center_vertical"
+            android:orientation="vertical"
+            android:padding="@dimen/spacing_quarter">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/home_launch_date"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_size_default"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_quarter"
+                android:textColor="@color/grey"
+                tools:text="Scheduled for December 4, 2019 at 18:48" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginStart="74dp"
+        android:background="@color/white" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/background_color"
+        android:orientation="horizontal"
+        android:padding="@dimen/spacing_middle">
+
+        <ImageView
+            android:id="@+id/image_launchpad"
+            android:layout_width="@dimen/image_size_default"
+            android:layout_height="@dimen/image_size_default"
+            android:src="@drawable/ic_launchpad"
+            android:tint="@color/white"
+            tools:ignore="ContentDescription" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="@dimen/spacing_middle"
+            android:gravity="center_vertical"
+            android:orientation="vertical"
+            android:padding="@dimen/spacing_quarter">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/home_launchpad"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_size_default"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_quarter"
+                android:textColor="@color/grey"
+                tools:text="Launch will happen on CCAFS SLC40" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginStart="74dp"
+        android:background="@color/white" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/background_color"
+        android:orientation="horizontal"
+        android:padding="@dimen/spacing_middle">
+
+        <ImageView
+            android:id="@+id/static_fire"
+            android:layout_width="@dimen/image_size_default"
+            android:layout_height="@dimen/image_size_default"
+            android:src="@drawable/ic_static_fire"
+            android:tint="@color/white"
+            tools:ignore="ContentDescription" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="@dimen/spacing_middle"
+            android:gravity="center_vertical"
+            android:orientation="vertical"
+            android:padding="@dimen/spacing_quarter">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/home_static_fire"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_size_default"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_quarter"
+                android:textColor="@color/grey"
+                tools:text="This event is not dated yet" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginStart="74dp"
+        android:background="@color/white" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/background_color"
+        android:orientation="horizontal"
+        android:padding="@dimen/spacing_middle">
+
+        <ImageView
+            android:id="@+id/image_dragon_capsule"
+            android:layout_width="@dimen/image_size_default"
+            android:layout_height="@dimen/image_size_default"
+            android:src="@drawable/ic_dragon_capsule"
+            android:tint="@color/white"
+            tools:ignore="ContentDescription" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="@dimen/spacing_middle"
+            android:gravity="center_vertical"
+            android:orientation="vertical"
+            android:padding="@dimen/spacing_quarter">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/home_dragon_capsule"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_size_default"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_quarter"
+                android:textColor="@color/grey"
+                tools:text="Details are yet to be disclosed" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginStart="74dp"
+        android:background="@color/white" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/background_color"
+        android:orientation="horizontal"
+        android:padding="@dimen/spacing_middle">
+
+        <ImageView
+            android:id="@+id/first_stage"
+            android:layout_width="@dimen/image_size_default"
+            android:layout_height="@dimen/image_size_default"
+            android:src="@drawable/ic_first_stage"
+            android:tint="@color/white"
+            tools:ignore="ContentDescription" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="@dimen/spacing_middle"
+            android:gravity="center_vertical"
+            android:orientation="vertical"
+            android:padding="@dimen/spacing_quarter">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/home_first_stage"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_size_default"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_quarter"
+                android:textColor="@color/grey"
+                tools:text="Booster is being reused" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginStart="74dp"
+        android:background="@color/white" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/background_color"
+        android:orientation="horizontal"
+        android:padding="@dimen/spacing_middle">
+
+        <ImageView
+            android:id="@+id/landing_zone"
+            android:layout_width="@dimen/image_size_default"
+            android:layout_height="@dimen/image_size_default"
+            android:src="@drawable/ic_landing_zone"
+            android:tint="@color/white"
+            tools:ignore="ContentDescription" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="@dimen/spacing_middle"
+            android:gravity="center_vertical"
+            android:orientation="vertical"
+            android:padding="@dimen/spacing_quarter">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/home_landing_zone"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_size_default"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_quarter"
+                android:textColor="@color/grey"
+                tools:text="Details are yet to be disclosed" />
+        </LinearLayout>
+    </LinearLayout>
 </LinearLayout>

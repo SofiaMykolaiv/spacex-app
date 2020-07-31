@@ -17,4 +17,13 @@
     <string name="header_upcoming">Upcoming</string>
     <string name="header_latest">Latest</string>
     <string name="header_company">Company</string>
+
+    <!--  Home screen:  -->
+    <string name="home_launched_by">Launched by Falcon 9</string>
+    <string name="home_launch_date">Launch date</string>
+    <string name="home_launchpad">Launchpad</string>
+    <string name="home_static_fire">Static fire</string>
+    <string name="home_dragon_capsule">Dragon capsule</string>
+    <string name="home_first_stage">First stage</string>
+    <string name="home_landing_zone">Landing zone</string>
 </resources>
