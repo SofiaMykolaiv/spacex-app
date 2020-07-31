@@ -18,7 +18,7 @@
     <dimen name="text_error_view_title">15sp</dimen>
 
     <dimen name="image_size_small">36dp</dimen>
-    <dimen name="image_size_default">50dp</dimen>
+    <dimen name="image_size_default">40dp</dimen>
 
 
     <dimen name="image_size_big">250dp</dimen>
