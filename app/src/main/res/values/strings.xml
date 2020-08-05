@@ -26,4 +26,6 @@
     <string name="home_dragon_capsule">Dragon capsule</string>
     <string name="home_first_stage">First stage</string>
     <string name="home_landing_zone">Landing zone</string>
+    <string name="home_details_are_yet_to_be_disclosed">Details are yet to be disclosed</string>
+    <string name="home_booster_is_being_reused">Booster is being reused</string>
 </resources>

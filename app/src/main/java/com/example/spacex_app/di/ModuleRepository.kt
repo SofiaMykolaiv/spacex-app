@@ -9,4 +9,5 @@ val repositoryModule = module {
     single { CapsuleRepository() }
     single { RocketRepository() }
     single { InfoRepository() }
+    single { LaunchRepository() }
 }

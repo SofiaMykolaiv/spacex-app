@@ -10,6 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/background_color"
+        android:gravity="center_vertical"
         android:orientation="horizontal"
         android:padding="@dimen/spacing_middle">
 
@@ -23,7 +24,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/spacing_middle"
             android:gravity="center_vertical"
             android:orientation="vertical"
@@ -38,6 +39,7 @@
                 android:textStyle="bold" />
 
             <TextView
+                android:id="@+id/text_launched_by"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/spacing_quarter"
@@ -56,6 +58,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/background_color"
+        android:gravity="center_vertical"
         android:orientation="horizontal"
         android:padding="@dimen/spacing_middle">
 
@@ -69,7 +72,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/spacing_middle"
             android:gravity="center_vertical"
             android:orientation="vertical"
@@ -84,6 +87,7 @@
                 android:textStyle="bold" />
 
             <TextView
+                android:id="@+id/text_launch_date"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/spacing_quarter"
@@ -102,6 +106,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/background_color"
+        android:gravity="center_vertical"
         android:orientation="horizontal"
         android:padding="@dimen/spacing_middle">
 
@@ -115,7 +120,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/spacing_middle"
             android:gravity="center_vertical"
             android:orientation="vertical"
@@ -130,6 +135,7 @@
                 android:textStyle="bold" />
 
             <TextView
+                android:id="@+id/text_launchpad"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/spacing_quarter"
@@ -148,6 +154,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/background_color"
+        android:gravity="center_vertical"
         android:orientation="horizontal"
         android:padding="@dimen/spacing_middle">
 
@@ -161,7 +168,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/spacing_middle"
             android:gravity="center_vertical"
             android:orientation="vertical"
@@ -176,6 +183,7 @@
                 android:textStyle="bold" />
 
             <TextView
+                android:id="@+id/text_static_fire"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/spacing_quarter"
@@ -194,6 +202,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/background_color"
+        android:gravity="center_vertical"
         android:orientation="horizontal"
         android:padding="@dimen/spacing_middle">
 
@@ -207,7 +216,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/spacing_middle"
             android:gravity="center_vertical"
             android:orientation="vertical"
@@ -222,11 +231,12 @@
                 android:textStyle="bold" />
 
             <TextView
+                android:id="@+id/text_dragon_capsule"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/spacing_quarter"
                 android:textColor="@color/grey"
-                tools:text="Details are yet to be disclosed" />
+                android:text="@string/home_details_are_yet_to_be_disclosed" />
         </LinearLayout>
     </LinearLayout>
 
@@ -240,6 +250,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/background_color"
+        android:gravity="center_vertical"
         android:orientation="horizontal"
         android:padding="@dimen/spacing_middle">
 
@@ -253,7 +264,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/spacing_middle"
             android:gravity="center_vertical"
             android:orientation="vertical"
@@ -268,11 +279,12 @@
                 android:textStyle="bold" />
 
             <TextView
+                android:id="@+id/text_first_stage"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/spacing_quarter"
                 android:textColor="@color/grey"
-                tools:text="Booster is being reused" />
+                android:text="@string/home_booster_is_being_reused" />
         </LinearLayout>
     </LinearLayout>
 
@@ -286,6 +298,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/background_color"
+        android:gravity="center_vertical"
         android:orientation="horizontal"
         android:padding="@dimen/spacing_middle">
 
@@ -299,7 +312,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/spacing_middle"
             android:gravity="center_vertical"
             android:orientation="vertical"
@@ -314,6 +327,7 @@
                 android:textStyle="bold" />
 
             <TextView
+                android:id="@+id/text_landing_zone"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/spacing_quarter"

@@ -1,10 +1,10 @@
 package com.example.spacex_app.presentation.viewmodel
 
 import androidx.lifecycle.MutableLiveData
-import com.example.spacex_app.data.network.response.LaunchResponse
 import com.example.spacex_app.data.repository.LaunchRepository
 import com.example.spacex_app.presentation.mapper.mapResponseToModel
 import com.example.spacex_app.presentation.model.LaunchModel
+import com.example.spacex_app.utiles.formatToLocaleDate
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -12,19 +12,39 @@ import org.koin.core.inject
 
 class HomeViewModel : BaseViewModel() {
 
-    private  val launchRepository by inject<LaunchRepository>()
+    private val launchRepository by inject<LaunchRepository>()
 
     val launchLiveData = MutableLiveData<LaunchModel>()
 
-    fun getNextLaunchNetwork() = CoroutineScope(Dispatchers.IO).launch {
+    fun getNextLaunchNetwork() = CoroutineScope(Dispatchers.Main).launch {
         try {
-            loadingLiveData.postValue(true)
+            loadingLiveData.value = true
             val nextLaunchResponse = launchRepository.loadNextLaunch()
-            launchLiveData.postValue(mapResponseToModel(nextLaunchResponse))
+            launchLiveData.value = mapResponseToModel(nextLaunchResponse)
         } catch (e: Exception) {
-            errorMessageLiveData.postValue(e.message)
+            errorMessageLiveData.value = e.message
         } finally {
-            loadingLiveData.postValue(false)
+            loadingLiveData.value = false
         }
+    }
+
+    fun getLaunchDate(launchDateUtc: String?): String {
+        var result = ""
+        try {
+            result = formatToLocaleDate(launchDateUtc)
+        } catch (e: Exception) {
+            errorMessageLiveData.value = e.message
+        }
+        return result
+    }
+
+    fun getStaticFireDate(staticFireUtc: String?): String?{
+        var result = ""
+        try {
+            result = formatToLocaleDate(staticFireUtc)
+        } catch (e: Exception) {
+            errorMessageLiveData.value = e.message
+        }
+        return result
     }
 }
