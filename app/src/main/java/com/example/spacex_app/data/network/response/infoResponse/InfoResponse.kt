@@ -3,6 +3,7 @@ package com.example.spacex_app.data.network.response.infoResponse
 data class InfoResponse(
     var name: String? = "",
     var founder: String? = "",
+    var founded: Int? = 0,
     var employees: Int? = 0,
     var vehicles: Int? = 0,
     var launch_sites: Int? = 0,

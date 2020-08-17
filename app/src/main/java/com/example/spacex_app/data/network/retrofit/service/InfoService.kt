@@ -1,4 +1,4 @@
-package com.example.spacex_app.data.network.service
+package com.example.spacex_app.data.network.retrofit.service
 
 import com.example.spacex_app.data.network.response.infoResponse.InfoResponse
 import retrofit2.http.GET

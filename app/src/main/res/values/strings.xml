@@ -16,7 +16,7 @@
     <string name="header_vehicles">Vehicles</string>
     <string name="header_upcoming">Upcoming</string>
     <string name="header_latest">Latest</string>
-    <string name="header_company">Company</string>
+    <string name="header_about_spacex">About SpaceX</string>
 
     <!--  Home screen:  -->
     <string name="home_launched_by">Launched by Falcon 9</string>
@@ -28,4 +28,16 @@
     <string name="home_landing_zone">Landing zone</string>
     <string name="home_details_are_yet_to_be_disclosed">Details are yet to be disclosed</string>
     <string name="home_booster_is_being_reused">Booster is being reused</string>
+
+    <!--  Company screen  -->
+    <string name="company_space_exploration">Space Exploration Technologies Corporation</string>
+    <string name="company_founded_in_x_by_elon_musk" formatted="false">Founded in %d by %s</string>
+    <string name="company_ceo">CEO</string>
+    <string name="company_cto">CTO</string>
+    <string name="company_coo">COO</string>
+    <string name="company_valuation">Valuation</string>
+    <string name="company_location">Location</string>
+    <string name="company_employees">Employees</string>
+    <string name="company_city_state" formatted="false">%s, %s</string>
+    <string name="company_achievements">Achievements</string>
 </resources>

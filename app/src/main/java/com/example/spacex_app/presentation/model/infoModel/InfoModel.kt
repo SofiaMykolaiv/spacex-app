@@ -7,6 +7,7 @@ import kotlinx.android.parcel.Parcelize
 data class InfoModel(
     var name: String? = "",
     var founder: String? = "",
+    var founded: Int? = 0,
     var employees: Int? = 0,
     var vehicles: Int? = 0,
     var launchSites: Int? = 0,

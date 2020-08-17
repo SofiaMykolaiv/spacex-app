@@ -16,5 +16,7 @@ data class LinksModel (
     var wikipedia: String? = "",
     var videoLink: String? = "",
     var youtubeId: String? = "",
-    var flickrImages: List<String>? = emptyList()
+    var flickrImages: List<String>? = emptyList(),
+    var reddit: String? = "",
+    var article: String? = ""
 ):Parcelable

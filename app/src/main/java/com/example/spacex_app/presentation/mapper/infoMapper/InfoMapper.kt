@@ -7,6 +7,7 @@ fun mapResponseToModel(infoResponse: InfoResponse) =
     InfoModel(
         name = infoResponse.name,
         founder = infoResponse.founder,
+        founded = infoResponse.founded,
         employees = infoResponse.employees,
         vehicles = infoResponse.vehicles,
         launchSites = infoResponse.launch_sites,
@@ -16,10 +17,7 @@ fun mapResponseToModel(infoResponse: InfoResponse) =
         coo = infoResponse.coo,
         ctoPropulsion = infoResponse.cto_propulsion,
         valuation = infoResponse.valuation,
-        headquarters = mapResponseToModel(
-            infoResponse.headquarters!!
-        ),
-        links = mapResponseToModel(
-            infoResponse.links!!
-        )
+        headquarters = mapResponseToModel(infoResponse.headquarters!!),
+        links = mapResponseToModel(infoResponse.links!!),
+        summary = infoResponse.summary
     )

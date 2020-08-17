@@ -3,9 +3,11 @@ package com.example.spacex_app.presentation.viewmodel
 import androidx.lifecycle.MutableLiveData
 import com.example.spacex_app.data.repository.InfoRepository
 import com.example.spacex_app.presentation.mapper.infoMapper.mapResponseToModel
+import com.example.spacex_app.presentation.model.historyModel.HistoryModel
 import com.example.spacex_app.presentation.model.infoModel.InfoModel
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.async
 import kotlinx.coroutines.launch
 import org.koin.core.inject
 
@@ -14,16 +16,40 @@ class CompanyViewModel : BaseViewModel() {
     private val infoRepository by inject<InfoRepository>()
 
     val companyInfoLiveData = MutableLiveData<InfoModel>()
+    val historyLiveData = MutableLiveData<List<HistoryModel>>()
 
-    fun getCompanyInfo() = CoroutineScope(Dispatchers.IO).launch {
+    fun getCompanyAsyncData() = CoroutineScope(Dispatchers.IO).launch {
+        getCompanyInfoAsync()
+        getHistoryListAsync()
+    }
+
+    private val companyInfoAsync = CoroutineScope(Dispatchers.IO).async {
+        val infoResponse = infoRepository.loadInfo()
+        companyInfoLiveData.postValue(mapResponseToModel(infoResponse))
+    }
+
+    private suspend fun getCompanyInfoAsync() {
         try {
-            loadingLiveData.postValue(true)
-            val infoResponse = infoRepository.loadInfo()
-            companyInfoLiveData.postValue(mapResponseToModel(infoResponse))
+            companyInfoAsync.await()
         } catch (e: Exception) {
             errorMessageLiveData.postValue(e.message)
-        } finally {
-            loadingLiveData.postValue(false)
+        }
+    }
+
+    private val historyListAsync = CoroutineScope(Dispatchers.IO).async {
+        val historyListResponse = infoRepository.loadHistoryList()
+        historyLiveData.postValue(
+            com.example.spacex_app.presentation.mapper.historyMapper.mapResponseToModel(
+                historyListResponse
+            )
+        )
+    }
+
+    private suspend fun getHistoryListAsync() {
+        try {
+            historyListAsync.await()
+        } catch (e: Exception) {
+            errorMessageLiveData.postValue(e.message)
         }
     }
 }

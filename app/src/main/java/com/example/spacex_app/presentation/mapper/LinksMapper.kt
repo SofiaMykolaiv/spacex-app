@@ -15,5 +15,7 @@ fun mapResponseToModel(linksResponse: LinksResponse) = LinksModel(
     wikipedia = linksResponse.wikipedia,
     videoLink = linksResponse.video_link,
     youtubeId = linksResponse.youtube_id,
-    flickrImages = linksResponse.flickr_images!!
+    flickrImages = linksResponse.flickr_images!!,
+    reddit = linksResponse.reddit,
+    article = linksResponse.article
 )

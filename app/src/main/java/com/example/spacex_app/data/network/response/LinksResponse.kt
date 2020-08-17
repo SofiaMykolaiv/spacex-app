@@ -12,5 +12,7 @@ data class LinksResponse(
     var wikipedia: String? = "",
     var video_link: String? = "",
     var youtube_id: String? = "",
-    var flickr_images: List<String>? = emptyList()
+    var flickr_images: List<String>? = emptyList(),
+    var reddit: String? = "",
+    var article: String? = ""
 )

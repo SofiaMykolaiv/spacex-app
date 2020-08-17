@@ -37,6 +37,6 @@
     <fragment
         android:id="@+id/company_fragment"
         android:name="com.example.spacex_app.presentation.fragment.CompanyFragment"
-        android:label="@string/header_company"
+        android:label="@string/header_about_spacex"
         tools:layout="@layout/fragment_company"/>
 </navigation>
