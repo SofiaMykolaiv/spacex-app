@@ -15,5 +15,5 @@ data class EngineModel(
     var propellant2: String? = "",
     var thrustSeaLevel: ThrustSeaLevelModel? = ThrustSeaLevelModel(),
     var thrustVacuum: ThrustVacuumModel? = ThrustVacuumModel(),
-    var thrustToWeight: Int? = 0
+    var thrustToWeight: Double? = 0.0
 ) : Parcelable
