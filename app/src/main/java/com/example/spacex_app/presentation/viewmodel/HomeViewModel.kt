@@ -2,8 +2,8 @@ package com.example.spacex_app.presentation.viewmodel
 
 import androidx.lifecycle.MutableLiveData
 import com.example.spacex_app.data.repository.LaunchRepository
-import com.example.spacex_app.presentation.mapper.mapResponseToModel
-import com.example.spacex_app.presentation.model.LaunchModel
+import com.example.spacex_app.presentation.mapper.launchMapper.mapResponseToModel
+import com.example.spacex_app.presentation.model.launchModel.LaunchModel
 import com.example.spacex_app.utiles.formatToLocaleDate
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers

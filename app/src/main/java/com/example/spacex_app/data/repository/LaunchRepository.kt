@@ -1,6 +1,6 @@
 package com.example.spacex_app.data.repository
 
-import com.example.spacex_app.data.network.response.LaunchResponse
+import com.example.spacex_app.data.network.response.launchResponse.LaunchResponse
 import com.example.spacex_app.data.network.retrofit.service.LaunchService
 import org.koin.core.inject
 
@@ -13,7 +13,7 @@ class LaunchRepository : BaseRepository {
         return launchListResponse
     }
 
-    suspend fun loadNextLaunch(): LaunchResponse{
+    suspend fun loadNextLaunch(): LaunchResponse {
         val launchResponse = launchService.loadNextLaunch()
         return launchResponse
     }

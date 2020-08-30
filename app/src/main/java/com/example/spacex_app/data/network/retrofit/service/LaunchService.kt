@@ -1,6 +1,6 @@
 package com.example.spacex_app.data.network.retrofit.service
 
-import com.example.spacex_app.data.network.response.LaunchResponse
+import com.example.spacex_app.data.network.response.launchResponse.LaunchResponse
 import retrofit2.http.GET
 
 interface LaunchService {

@@ -1,7 +1,7 @@
-package com.example.spacex_app.presentation.mapper
+package com.example.spacex_app.presentation.mapper.launchMapper
 
-import com.example.spacex_app.data.network.response.CoreResponse
-import com.example.spacex_app.presentation.model.CoreModel
+import com.example.spacex_app.data.network.response.launchResponse.CoreResponse
+import com.example.spacex_app.presentation.model.launchModel.CoreModel
 
 fun mapResponseToModel(coreResponseList: List<CoreResponse>?) =
     coreResponseList?.let { list ->

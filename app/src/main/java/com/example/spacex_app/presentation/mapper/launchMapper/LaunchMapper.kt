@@ -1,7 +1,7 @@
-package com.example.spacex_app.presentation.mapper
+package com.example.spacex_app.presentation.mapper.launchMapper
 
-import com.example.spacex_app.data.network.response.LaunchResponse
-import com.example.spacex_app.presentation.model.LaunchModel
+import com.example.spacex_app.data.network.response.launchResponse.LaunchResponse
+import com.example.spacex_app.presentation.model.launchModel.LaunchModel
 
 fun mapResponseToModel(launchResponse: LaunchResponse) = LaunchModel(
     flightNumber = launchResponse.flight_number,

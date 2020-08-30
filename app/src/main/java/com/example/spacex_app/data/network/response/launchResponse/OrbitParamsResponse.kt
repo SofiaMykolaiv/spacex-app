@@ -1,4 +1,4 @@
-package com.example.spacex_app.data.network.response
+package com.example.spacex_app.data.network.response.launchResponse
 
 data class OrbitParamsResponse(
     var reference_system: String? = "",

@@ -1,7 +1,7 @@
-package com.example.spacex_app.presentation.mapper
+package com.example.spacex_app.presentation.mapper.launchMapper
 
-import com.example.spacex_app.data.network.response.RocketResponse
-import com.example.spacex_app.presentation.model.RocketModel
+import com.example.spacex_app.data.network.response.launchResponse.RocketResponse
+import com.example.spacex_app.presentation.model.launchModel.RocketModel
 
 fun mapResponseToModel(rocketResponse: RocketResponse) = RocketModel(
     rocketId = rocketResponse.rocket_id,

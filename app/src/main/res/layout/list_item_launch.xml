@@ -6,7 +6,7 @@
 
 <!--        <variable-->
 <!--            name="model"-->
-<!--            type="com.example.spacex_app.presentation.model.LaunchModel" />-->
+<!--            type="com.example.spacex_app.presentation.model.launchModel.LaunchModel" />-->
     </data>
 
     <LinearLayout

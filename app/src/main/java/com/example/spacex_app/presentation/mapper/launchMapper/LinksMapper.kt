@@ -1,7 +1,7 @@
-package com.example.spacex_app.presentation.mapper
+package com.example.spacex_app.presentation.mapper.launchMapper
 
-import com.example.spacex_app.data.network.response.LinksResponse
-import com.example.spacex_app.presentation.model.LinksModel
+import com.example.spacex_app.data.network.response.launchResponse.LinksResponse
+import com.example.spacex_app.presentation.model.launchModel.LinksModel
 
 fun mapResponseToModel(linksResponse: LinksResponse) = LinksModel(
     missionPatch = linksResponse.mission_patch,

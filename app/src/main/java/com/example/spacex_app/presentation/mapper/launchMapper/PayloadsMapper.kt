@@ -1,7 +1,7 @@
-package com.example.spacex_app.presentation.mapper
+package com.example.spacex_app.presentation.mapper.launchMapper
 
-import com.example.spacex_app.data.network.response.PayloadsResponse
-import com.example.spacex_app.presentation.model.PayloadsModel
+import com.example.spacex_app.data.network.response.launchResponse.PayloadsResponse
+import com.example.spacex_app.presentation.model.launchModel.PayloadsModel
 
 fun mapResponseToModel(payloadsResponseList: List<PayloadsResponse>) =
     payloadsResponseList.map { payloadsResponse ->
