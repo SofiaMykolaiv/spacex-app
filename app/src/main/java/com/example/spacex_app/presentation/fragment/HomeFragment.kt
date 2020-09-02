@@ -3,9 +3,8 @@ package com.example.spacex_app.presentation.fragment
 import android.os.Bundle
 import androidx.lifecycle.Observer
 import com.example.spacex_app.R
-import com.example.spacex_app.presentation.model.LaunchModel
+import com.example.spacex_app.presentation.model.launchModel.LaunchModel
 import com.example.spacex_app.presentation.viewmodel.HomeViewModel
-import com.example.spacex_app.utiles.formatToLocaleDate
 import com.example.spacex_app.utiles.showSimpleErrorDialog
 import kotlinx.android.synthetic.main.fragment_home.*
 import org.koin.android.ext.android.inject

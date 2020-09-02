@@ -1,9 +1,9 @@
 package com.example.spacex_app.presentation.viewmodel
 
 import androidx.lifecycle.MutableLiveData
-import com.example.spacex_app.data.repository.LaunchRepository
-import com.example.spacex_app.presentation.mapper.mapResponseToModel
-import com.example.spacex_app.presentation.model.LaunchModel
+import com.example.spacex_app.data.repository.Repository
+import com.example.spacex_app.presentation.mapper.launchMapper.mapResponseToModel
+import com.example.spacex_app.presentation.model.launchModel.LaunchModel
 import com.example.spacex_app.utiles.formatToLocaleDate
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -12,14 +12,14 @@ import org.koin.core.inject
 
 class HomeViewModel : BaseViewModel() {
 
-    private val launchRepository by inject<LaunchRepository>()
+    private val repository by inject<Repository>()
 
     val launchLiveData = MutableLiveData<LaunchModel>()
 
     fun getNextLaunchNetwork() = CoroutineScope(Dispatchers.Main).launch {
         try {
             loadingLiveData.value = true
-            val nextLaunchResponse = launchRepository.loadNextLaunch()
+            val nextLaunchResponse = repository.loadNextLaunch()
             launchLiveData.value = mapResponseToModel(nextLaunchResponse)
         } catch (e: Exception) {
             errorMessageLiveData.value = e.message

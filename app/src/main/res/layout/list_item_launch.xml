@@ -4,9 +4,9 @@
 
     <data>
 
-        <!--        <variable-->
-        <!--            name="model"-->
-        <!--            type="com.example.spacex_app.presentation.model.LaunchModel" />-->
+<!--        <variable-->
+<!--            name="model"-->
+<!--            type="com.example.spacex_app.presentation.model.launchModel.LaunchModel" />-->
     </data>
 
     <LinearLayout
