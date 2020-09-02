@@ -2,9 +2,7 @@ package com.example.spacex_app.presentation.viewmodel
 
 import androidx.lifecycle.MediatorLiveData
 import androidx.lifecycle.MutableLiveData
-import com.example.spacex_app.data.repository.DragonRepository
-import com.example.spacex_app.data.repository.RocketRepository
-import com.example.spacex_app.data.repository.ShipRepository
+import com.example.spacex_app.data.repository.Repository
 import com.example.spacex_app.presentation.mapper.mapDragonResponseToModel
 import com.example.spacex_app.presentation.mapper.mapRocketResponseToModel
 import com.example.spacex_app.presentation.mapper.mapShipResponseToModel
@@ -17,9 +15,7 @@ import org.koin.core.inject
 
 class VehiclesViewModel : BaseViewModel() {
 
-    private val dragonRepository by inject<DragonRepository>()
-    private val shipRepository by inject<ShipRepository>()
-    private val rocketRepository by inject<RocketRepository>()
+    private val repository by inject<Repository> ()
 
     private val dragonLiveData = MutableLiveData<List<VehicleModel>>()
     private val shipLiveData = MutableLiveData<List<VehicleModel>>()
@@ -70,7 +66,7 @@ class VehiclesViewModel : BaseViewModel() {
     }
 
     private val dragonListAsync = CoroutineScope(Dispatchers.IO).async {
-        val dragonListResponse = dragonRepository.loadDragonList()
+        val dragonListResponse = repository.loadDragonList()
         dragonLiveData.postValue(mapDragonResponseToModel(dragonListResponse))
     }
 
@@ -83,7 +79,7 @@ class VehiclesViewModel : BaseViewModel() {
     }
 
     private val shipListAsync = CoroutineScope(Dispatchers.IO).async {
-        val shipListResponse = shipRepository.loadShipList()
+        val shipListResponse = repository.loadShipList()
         shipLiveData.postValue(mapShipResponseToModel(shipListResponse))
     }
 
@@ -96,7 +92,7 @@ class VehiclesViewModel : BaseViewModel() {
     }
 
     private val rocketListAsync = CoroutineScope(Dispatchers.IO).async {
-        val rocketListResponse = rocketRepository.loadRocketList()
+        val rocketListResponse = repository.loadRocketList()
         rocketLiveData.postValue(mapRocketResponseToModel(rocketListResponse))
     }
 
