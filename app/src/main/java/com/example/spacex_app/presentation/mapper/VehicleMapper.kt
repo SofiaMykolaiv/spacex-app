@@ -23,7 +23,7 @@ fun mapShipResponseToModel(shipListResponse: List<ShipResponse>?) =
             VehicleModel(
                 id = shipResponse.ship_id,
                 name = shipResponse.ship_name,
-                imageUrl = shipResponse.url,
+                imageUrl = shipResponse.image,
                 buildDate = shipResponse.year_built.toString()
             )
         }

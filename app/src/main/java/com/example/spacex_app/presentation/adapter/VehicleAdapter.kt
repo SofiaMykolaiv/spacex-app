@@ -3,9 +3,12 @@ package com.example.spacex_app.presentation.adapter
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import coil.load
+import coil.transform.CircleCropTransformation
+import coil.transform.RoundedCornersTransformation
+import com.example.spacex_app.R
 import com.example.spacex_app.databinding.ListItemVehicleBinding
 import com.example.spacex_app.presentation.model.vehicleModel.VehicleModel
-import com.example.spacex_app.utiles.loadImageUrl
 
 class VehicleAdapter : RecyclerView.Adapter<VehicleAdapter.ViewHolder>() {
 
@@ -30,9 +33,20 @@ class VehicleAdapter : RecyclerView.Adapter<VehicleAdapter.ViewHolder>() {
     class ViewHolder(private val binding: ListItemVehicleBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
-        fun bind( model: VehicleModel) {
+        fun bind(model: VehicleModel) {
             binding.model = model
-            binding.imageVehicle.loadImageUrl(model.imageUrl)
+            if (model.imageUrl != null) {
+                binding.imageVehicle.load(model.imageUrl) {
+                    crossfade(true)
+                    error(R.drawable.ic_launch)
+                    placeholder(R.drawable.ic_launch)
+                    transformations(RoundedCornersTransformation(16f))
+                }
+            } else {
+                binding.imageVehicle.load(R.drawable.ic_launch) {
+                    transformations(CircleCropTransformation())
+                }
+            }
         }
     }
 }

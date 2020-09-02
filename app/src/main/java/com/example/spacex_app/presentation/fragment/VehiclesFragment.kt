@@ -32,15 +32,15 @@ class VehiclesFragment : BaseFragment<VehiclesViewModel>() {
     }
 
     private fun observeData() {
-        viewModel.vehiclesMediatorLiveData.observe(viewLifecycleOwner, Observer { list ->
+        viewModel.vehiclesMediatorLiveData.observe(viewLifecycleOwner, { list ->
             if (viewModel.count == VehiclesViewModel.COUNT_ALL_SOURCES) {
                 vehicleAdapter.vehicleList = viewModel.vehicleList
             }
         })
-        viewModel.errorMessageLiveData.observe(viewLifecycleOwner, Observer { exceptionMessage ->
+        viewModel.errorMessageLiveData.observe(viewLifecycleOwner, { exceptionMessage ->
             showSimpleErrorDialog(context, null, exceptionMessage, null, null)
         })
-        viewModel.loadingLiveData.observe(viewLifecycleOwner, Observer {isLoading ->
+        viewModel.loadingLiveData.observe(viewLifecycleOwner, { isLoading ->
             setLoadingState(isLoading)
         })
     }
