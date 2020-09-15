@@ -31,6 +31,9 @@ interface ApiService {
     @GET("/v3/launches/next")
     suspend fun loadNextLaunch(): LaunchResponse
 
+    @GET("/v3/launches/upcoming")
+    suspend fun loadUpcomingLaunchList(): List<LaunchResponse>
+
     @GET("/v3/rockets")
     suspend fun getRocketList(): List<RocketResponse>
 

@@ -25,6 +25,5 @@ data class LaunchModel (
     var upcoming: Boolean? = false,
     var staticFireDateUtc: String? = "",
     var staticFireDateUnix: String? = "",
-    var timeline: String? = "",
-    var crew: String? = ""
+    var timeline: String? = ""
 ): Parcelable

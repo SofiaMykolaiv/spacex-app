@@ -7,6 +7,7 @@ import coil.load
 import coil.transform.CircleCropTransformation
 import coil.transform.RoundedCornersTransformation
 import com.example.spacex_app.R
+import com.example.spacex_app.constants.ImageConstants
 import com.example.spacex_app.databinding.ListItemVehicleBinding
 import com.example.spacex_app.presentation.model.vehicleModel.VehicleModel
 
@@ -40,7 +41,7 @@ class VehicleAdapter : RecyclerView.Adapter<VehicleAdapter.ViewHolder>() {
                     crossfade(true)
                     error(R.drawable.ic_launch)
                     placeholder(R.drawable.ic_launch)
-                    transformations(RoundedCornersTransformation(16f))
+                    transformations(RoundedCornersTransformation(ImageConstants.DEFAULT_ROUNDED_CORNERS_RADIUS))
                 }
             } else {
                 binding.imageVehicle.load(R.drawable.ic_launch) {

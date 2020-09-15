@@ -1,7 +1,6 @@
 package com.example.spacex_app.presentation.fragment
 
 import android.os.Bundle
-import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.spacex_app.R
 import com.example.spacex_app.presentation.adapter.VehicleAdapter
