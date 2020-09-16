@@ -4,15 +4,16 @@
 
     <data>
 
-<!--        <variable-->
-<!--            name="model"-->
-<!--            type="com.example.spacex_app.presentation.model.LaunchModel" />-->
+        <variable
+            name="model"
+            type="com.example.spacex_app.presentation.model.launchModel.LaunchModel" />
     </data>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/background_color"
+        android:gravity="center_vertical"
         android:orientation="horizontal"
         android:padding="@dimen/spacing_middle">
 
@@ -25,27 +26,29 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/spacing_middle"
             android:gravity="center_vertical"
             android:orientation="vertical"
             android:padding="@dimen/spacing_quarter">
 
             <TextView
+                android:id="@+id/tv_title"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textColor="@color/white"
                 android:textSize="@dimen/text_size_default"
                 android:textStyle="bold"
-                tools:text="Starlink 2" />
+                tools:text="Starlink 2"
+                android:text="@{model.missionName}"/>
 
             <TextView
+                android:id="@+id/tv_date"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/spacing_quarter"
                 android:textColor="@color/grey"
-                tools:text="NET 2019" />
-
+                tools:text="NET 2019"/>
         </LinearLayout>
     </LinearLayout>
 </layout>

@@ -5,6 +5,6 @@ import kotlinx.android.parcel.Parcelize
 
 @Parcelize
 data class HeightModel(
-    var meters: Double? = 0.00,
-    var feet: Int? = 0
+    var meters: Double? = 0.0,
+    var feet: Double? = 0.0
 ) : Parcelable

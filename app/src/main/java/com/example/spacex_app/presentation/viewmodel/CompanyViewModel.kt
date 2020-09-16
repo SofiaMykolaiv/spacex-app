@@ -1,7 +1,7 @@
 package com.example.spacex_app.presentation.viewmodel
 
 import androidx.lifecycle.MutableLiveData
-import com.example.spacex_app.data.repository.InfoRepository
+import com.example.spacex_app.data.repository.Repository
 import com.example.spacex_app.presentation.mapper.infoMapper.mapResponseToModel
 import com.example.spacex_app.presentation.model.historyModel.HistoryModel
 import com.example.spacex_app.presentation.model.infoModel.InfoModel
@@ -13,7 +13,7 @@ import org.koin.core.inject
 
 class CompanyViewModel : BaseViewModel() {
 
-    private val infoRepository by inject<InfoRepository>()
+    private val infoRepository by inject<Repository>()
 
     val companyInfoLiveData = MutableLiveData<InfoModel>()
     val historyLiveData = MutableLiveData<List<HistoryModel>>()

@@ -11,5 +11,5 @@ data class EngineResponse(
     var propellant_2: String? = "",
     var thrust_sea_level: ThrustSeaLevelResponse? = ThrustSeaLevelResponse(),
     var thrust_vacuum: ThrustVacuumResponse? = ThrustVacuumResponse(),
-    var thrust_to_weight: Int? = 0
+    var thrust_to_weight: Double? = 0.0
 )
