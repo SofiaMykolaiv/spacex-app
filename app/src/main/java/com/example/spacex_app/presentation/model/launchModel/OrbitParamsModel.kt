@@ -14,7 +14,7 @@ data class OrbitParamsModel(
     var apoapsisKm: String? = "",
     var inclinationDeg: String? = "",
     var periodMin: String? = "",
-    var lifespanYears: Int? = 0,
+    var lifespanYears: Double? = 0.0,
     var epoch: String? = "",
     var meanMotion: String? = "",
     var raan: String? = "",

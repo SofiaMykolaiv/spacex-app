@@ -20,6 +20,5 @@ data class LaunchResponse(
     var details: String? = "",
     var upcoming: Boolean? = false,
     var static_fire_date_utc: String? = "",
-    var static_fire_date_unix: String? = "",
-    var timeline: String? = ""
+    var static_fire_date_unix: Long? = 0
 )

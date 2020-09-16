@@ -10,7 +10,7 @@ data class OrbitParamsResponse(
     var apoapsis_km: String? = "",
     var inclination_deg: String? = "",
     var period_min: String? = "",
-    var lifespan_years: Int? = 0,
+    var lifespan_years: Double? = 0.0,
     var epoch: String? = "",
     var mean_motion: String? = "",
     var raan: String? = "",

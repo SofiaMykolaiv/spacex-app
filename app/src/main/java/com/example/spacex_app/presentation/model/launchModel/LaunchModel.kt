@@ -23,7 +23,5 @@ data class LaunchModel (
     var links: LinksModel? = LinksModel(),
     var details: String? = "",
     var upcoming: Boolean? = false,
-    var staticFireDateUtc: String? = "",
-    var staticFireDateUnix: String? = "",
-    var timeline: String? = ""
+    var staticFireDateUtc: String? = ""
 ): Parcelable

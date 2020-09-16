@@ -11,7 +11,7 @@ import org.koin.android.ext.android.inject
 
 class UpcomingFragment : BaseFragment<UpcomingViewModel>() {
 
-   private lateinit var launchAdapter: LaunchAdapter
+    private lateinit var launchAdapter: LaunchAdapter
 
     override val viewModel by inject<UpcomingViewModel>()
 

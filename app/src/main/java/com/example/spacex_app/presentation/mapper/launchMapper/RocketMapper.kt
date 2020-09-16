@@ -9,5 +9,5 @@ fun mapResponseToModel(rocketResponse: RocketResponse) = RocketModel(
     rocketType = rocketResponse.rocket_type,
     firstStage = mapResponseToModel(rocketResponse.first_stage!!),
     secondStage = mapResponseToModel(rocketResponse.second_stage!!),
-    fairings = mapResponseToModel(rocketResponse.fairings!!)
+    fairings = mapResponseToModel(rocketResponse.fairings)
 )

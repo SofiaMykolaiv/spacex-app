@@ -53,6 +53,11 @@ class Repository : BaseRepository {
         return upcomingLaunchListResponse
     }
 
+    suspend fun loadLatestLaunchList(): List<LaunchResponse>{
+        val latestLaunchListResponse = apiService.loadPastLaunchList()
+        return latestLaunchListResponse
+    }
+
     suspend fun loadRocketList(): List<RocketResponse> {
         val rocketListResponse = apiService.getRocketList()
         return rocketListResponse
