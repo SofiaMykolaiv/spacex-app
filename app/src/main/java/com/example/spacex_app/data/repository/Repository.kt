@@ -2,6 +2,7 @@ package com.example.spacex_app.data.repository
 
 import com.example.spacex_app.data.network.response.capsuleResponse.CapsuleResponse
 import com.example.spacex_app.data.network.response.dragonResponse.DragonResponse
+import com.example.spacex_app.data.network.response.historyResponse.HistoryResponse
 import com.example.spacex_app.data.network.response.infoResponse.InfoResponse
 import com.example.spacex_app.data.network.response.launchResponse.LaunchResponse
 import com.example.spacex_app.data.network.response.rocketResponse.RocketResponse
@@ -36,6 +37,11 @@ class Repository : BaseRepository {
     suspend fun loadInfo(): InfoResponse {
         val infoResponse = apiService.getInfo()
         return infoResponse
+    }
+
+    suspend fun loadHistoryList(): List<HistoryResponse> {
+        val historyListResponse = apiService.getHistoryList()
+        return historyListResponse
     }
 
     suspend fun loadLaunchList(): List<LaunchResponse> {

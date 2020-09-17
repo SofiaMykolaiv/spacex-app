@@ -2,6 +2,7 @@ package com.example.spacex_app.data.network.service
 
 import com.example.spacex_app.data.network.response.capsuleResponse.CapsuleResponse
 import com.example.spacex_app.data.network.response.dragonResponse.DragonResponse
+import com.example.spacex_app.data.network.response.historyResponse.HistoryResponse
 import com.example.spacex_app.data.network.response.infoResponse.InfoResponse
 import com.example.spacex_app.data.network.response.launchResponse.LaunchResponse
 import com.example.spacex_app.data.network.response.rocketResponse.RocketResponse
@@ -24,6 +25,9 @@ interface ApiService {
 
     @GET("/v3/info")
     suspend fun getInfo(): InfoResponse
+
+    @GET("/v3/history")
+    suspend fun getHistoryList(): List<HistoryResponse>
 
     @GET("/v3/launches")
     suspend fun loadLaunchList(): List<LaunchResponse>

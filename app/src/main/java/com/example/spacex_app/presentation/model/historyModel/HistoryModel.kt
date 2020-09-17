@@ -1,7 +1,7 @@
 package com.example.spacex_app.presentation.model.historyModel
 
 import android.os.Parcelable
-import com.example.spacex_app.presentation.model.LinksModel
+import com.example.spacex_app.presentation.model.launchModel.LinksModel
 import kotlinx.android.parcel.Parcelize
 
 @Parcelize

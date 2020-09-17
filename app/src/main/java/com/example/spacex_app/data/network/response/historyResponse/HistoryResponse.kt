@@ -1,6 +1,6 @@
 package com.example.spacex_app.data.network.response.historyResponse
 
-import com.example.spacex_app.data.network.response.LinksResponse
+import com.example.spacex_app.data.network.response.launchResponse.LinksResponse
 
 data class HistoryResponse(
     var id: Int? = 0,
