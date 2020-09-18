@@ -1,10 +1,12 @@
 package com.example.spacex_app.presentation.fragment
 
+import android.net.Uri
 import android.os.Bundle
-import androidx.lifecycle.Observer
+import androidx.browser.customtabs.CustomTabsIntent
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.spacex_app.R
 import com.example.spacex_app.presentation.adapter.HistoryAdapter
+import com.example.spacex_app.presentation.model.historyModel.HistoryModel
 import com.example.spacex_app.presentation.model.infoModel.InfoModel
 import com.example.spacex_app.presentation.viewmodel.CompanyViewModel
 import com.example.spacex_app.utiles.showSimpleErrorDialog
@@ -43,7 +45,7 @@ class CompanyFragment : BaseFragment<CompanyViewModel>() {
     }
 
     private fun setAdapter() {
-        historyAdapter = HistoryAdapter()
+        historyAdapter = HistoryAdapter { onItemClick(it) }
         recycler_view_achievements.layoutManager = LinearLayoutManager(activity)
         recycler_view_achievements.adapter = historyAdapter
     }
@@ -65,5 +67,10 @@ class CompanyFragment : BaseFragment<CompanyViewModel>() {
         )
         text_employees.text = infoModel.employees.toString()
         text_summary.text = infoModel.summary
+    }
+
+    private fun onItemClick(historyModel: HistoryModel) {
+        CustomTabsIntent.Builder().build()
+            .launchUrl(requireContext(), Uri.parse(historyModel.links?.article))
     }
 }
