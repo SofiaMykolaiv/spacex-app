@@ -3,19 +3,23 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:padding="@dimen/spacing_default">
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/spacing_quarter"
         android:gravity="center"
         android:text="@string/company_space_exploration"
+        android:textColor="@color/grey_light"
         android:textSize="@dimen/text_size_default" />
 
     <TextView
         android:id="@+id/text_founded_in"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/spacing_quarter"
         android:gravity="center"
         android:textColor="@color/grey"
         android:textSize="@dimen/text_size_default"
@@ -24,13 +28,15 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/spacing_half"
         android:orientation="horizontal">
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="@string/company_ceo" />
+            android:text="@string/company_ceo"
+            android:textColor="@color/grey_light" />
 
         <TextView
             android:id="@+id/text_ceo"
@@ -38,19 +44,22 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="end"
+            android:textColor="@color/grey"
             tools:text="@tools:sample/full_names" />
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/spacing_half"
         android:orientation="horizontal">
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="@string/company_cto" />
+            android:text="@string/company_cto"
+            android:textColor="@color/grey_light" />
 
         <TextView
             android:id="@+id/text_cto"
@@ -58,19 +67,22 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="end"
+            android:textColor="@color/grey"
             tools:text="@tools:sample/full_names" />
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/spacing_half"
         android:orientation="horizontal">
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="@string/company_coo" />
+            android:text="@string/company_coo"
+            android:textColor="@color/grey_light" />
 
         <TextView
             android:id="@+id/text_coo"
@@ -78,19 +90,22 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="end"
+            android:textColor="@color/grey"
             tools:text="@tools:sample/full_names" />
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/spacing_half"
         android:orientation="horizontal">
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="@string/company_valuation" />
+            android:text="@string/company_valuation"
+            android:textColor="@color/grey_light" />
 
         <TextView
             android:id="@+id/text_valuation"
@@ -98,19 +113,22 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="end"
+            android:textColor="@color/grey"
             tools:text="@tools:sample/full_names" />
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/spacing_half"
         android:orientation="horizontal">
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="@string/company_location" />
+            android:text="@string/company_location"
+            android:textColor="@color/grey_light" />
 
         <TextView
             android:id="@+id/text_location"
@@ -118,19 +136,22 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="end"
+            android:textColor="@color/grey"
             tools:text="@tools:sample/full_names" />
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/spacing_half"
         android:orientation="horizontal">
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="@string/company_employees" />
+            android:text="@string/company_employees"
+            android:textColor="@color/grey_light" />
 
         <TextView
             android:id="@+id/text_employees"
@@ -138,6 +159,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="end"
+            android:textColor="@color/grey"
             tools:text="@tools:sample/full_names" />
     </LinearLayout>
 
@@ -145,6 +167,8 @@
         android:id="@+id/text_summary"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/spacing_half"
+        android:textColor="@color/grey"
         tools:maxLines="5"
         tools:text="@tools:sample/lorem/random" />
 

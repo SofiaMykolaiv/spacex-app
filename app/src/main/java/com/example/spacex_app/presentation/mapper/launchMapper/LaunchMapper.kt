@@ -2,7 +2,6 @@ package com.example.spacex_app.presentation.mapper.launchMapper
 
 import com.example.spacex_app.data.network.response.launchResponse.LaunchResponse
 import com.example.spacex_app.presentation.model.launchModel.LaunchModel
-import com.example.spacex_app.utiles.formatToLocaleDate
 
 fun mapResponseToModel(upcomingLaunchListResponse: List<LaunchResponse>) =
     upcomingLaunchListResponse.map { launchResponse ->

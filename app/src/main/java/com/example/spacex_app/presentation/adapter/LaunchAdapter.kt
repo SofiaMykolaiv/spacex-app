@@ -10,7 +10,7 @@ import com.example.spacex_app.R
 import com.example.spacex_app.constants.ImageConstants
 import com.example.spacex_app.databinding.ListItemLaunchBinding
 import com.example.spacex_app.presentation.model.launchModel.LaunchModel
-import com.example.spacex_app.utiles.formatToLocaleDate
+import com.example.spacex_app.utiles.DateUtils
 
 class LaunchAdapter : RecyclerView.Adapter<LaunchAdapter.ViewHolder>() {
 
@@ -37,7 +37,7 @@ class LaunchAdapter : RecyclerView.Adapter<LaunchAdapter.ViewHolder>() {
 
         fun bind(model: LaunchModel) {
             binding.model = model
-            binding.tvDate.text = formatToLocaleDate(model.launchDateUtc)
+            binding.tvDate.text = DateUtils.formatToLocaleDate(model.launchDateUtc)
             if (model.links?.missionPatchSmall != null) {
                 binding.imageLaunch.load(model.links?.missionPatchSmall) {
                     crossfade(true)

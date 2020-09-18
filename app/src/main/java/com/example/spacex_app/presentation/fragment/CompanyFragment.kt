@@ -31,13 +31,13 @@ class CompanyFragment : BaseFragment<CompanyViewModel>() {
     }
 
     private fun observeData() {
-        viewModel.companyInfoLiveData.observe(viewLifecycleOwner, Observer { infoModel ->
+        viewModel.companyInfoLiveData.observe(viewLifecycleOwner, { infoModel ->
             setData(infoModel)
         })
-        viewModel.historyLiveData.observe(viewLifecycleOwner, Observer { historyList ->
+        viewModel.historyLiveData.observe(viewLifecycleOwner, { historyList ->
             historyAdapter.historyList = historyList.toMutableList()
         })
-        viewModel.errorMessageLiveData.observe(viewLifecycleOwner, Observer { exceptionMessage ->
+        viewModel.errorMessageLiveData.observe(viewLifecycleOwner, { exceptionMessage ->
             showSimpleErrorDialog(context, null, exceptionMessage, null, null)
         })
     }

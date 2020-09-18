@@ -4,6 +4,8 @@
 
     <data>
 
+        <import type="com.example.spacex_app.utiles.DateUtils"/>
+
         <variable
             name="model"
             type="com.example.spacex_app.presentation.model.historyModel.HistoryModel" />
@@ -13,7 +15,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="@dimen/spacing_half"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:layout_margin="@dimen/spacing_quarter">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -36,19 +39,26 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:layout_marginStart="@dimen/spacing_half">
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@{model.title}"
-                    tools:text="@tools:sample/full_names" />
+                    tools:text="@tools:sample/full_names"
+                    android:textSize="@dimen/text_size_default"
+                    android:textStyle="bold"
+                    android:textColor="@color/grey_light"/>
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@{model.eventDateUtc}"
-                    tools:text="@tools:sample/lorem" />
+                    android:text="@{DateUtils.formatToLocaleDate(model.eventDateUtc)}"
+                    tools:text="@tools:sample/lorem"
+                    android:textSize="@dimen/text_size_small"
+                    android:textColor="@color/grey_light"
+                    android:layout_marginTop="@dimen/spacing_quarter"/>
             </LinearLayout>
         </LinearLayout>
 
@@ -57,6 +67,14 @@
             android:layout_height="match_parent"
             android:maxLines="2"
             android:text="@{model.details}"
-            tools:text="@tools:sample/lorem/random" />
+            tools:text="@tools:sample/lorem/random"
+            android:textColor="@color/grey"
+            android:layout_marginTop="@dimen/spacing_half"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@color/grey"
+            android:layout_marginTop="@dimen/spacing_half" />
     </LinearLayout>
 </layout>

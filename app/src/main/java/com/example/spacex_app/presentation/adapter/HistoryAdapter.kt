@@ -5,6 +5,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.spacex_app.databinding.ListItemHistoryBinding
 import com.example.spacex_app.presentation.model.historyModel.HistoryModel
+import com.example.spacex_app.utiles.DateUtils
 
 class HistoryAdapter : RecyclerView.Adapter<HistoryAdapter.ViewHolder>() {
 

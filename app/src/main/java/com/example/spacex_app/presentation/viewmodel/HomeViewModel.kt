@@ -4,7 +4,7 @@ import androidx.lifecycle.MutableLiveData
 import com.example.spacex_app.data.repository.Repository
 import com.example.spacex_app.presentation.mapper.launchMapper.mapResponseToModel
 import com.example.spacex_app.presentation.model.launchModel.LaunchModel
-import com.example.spacex_app.utiles.formatToLocaleDate
+import com.example.spacex_app.utiles.DateUtils.formatToLocaleDate
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -29,22 +29,12 @@ class HomeViewModel : BaseViewModel() {
     }
 
     fun getLaunchDate(launchDateUtc: String?): String {
-        var result = ""
-        try {
-            result = formatToLocaleDate(launchDateUtc)
-        } catch (e: Exception) {
-            errorMessageLiveData.value = e.message
-        }
+        val result = formatToLocaleDate(launchDateUtc)
         return result
     }
 
     fun getStaticFireDate(staticFireUtc: String?): String?{
-        var result = ""
-        try {
-            result = formatToLocaleDate(staticFireUtc)
-        } catch (e: Exception) {
-            errorMessageLiveData.value = e.message
-        }
+        val result = formatToLocaleDate(staticFireUtc)
         return result
     }
 }
