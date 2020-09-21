@@ -7,7 +7,7 @@
     <color name="black">#000000</color>
     <color name="black_semi_transparent">#B2000000</color>
     <color name="half_black">#4c4c4c</color>
-    <color name="grey">#CFCFCF</color>
+    <color name="grey">#AFAFAF</color>
     <color name="grey_light">#E9E9E9</color>
     <color name="white">#FFFFFF</color>
     <color name="orange">#FF9800</color>
@@ -15,7 +15,9 @@
     <color name="yellow_dark">#9c7a0c </color>
     <color name="red">#E91E63</color>
 
-    <color name="background_color">#212121</color>
+    <color name="color_background">#212121</color>
+    <color name="color_background_screen_details">#333333</color>
+    <color name="color_background_border_details">#6A6A6A</color>
 
     <!--  Bottom navigation:  -->
     <color name="color_bottom_nav_icon_active">#D68927</color>

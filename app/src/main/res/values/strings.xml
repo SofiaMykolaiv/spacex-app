@@ -40,4 +40,24 @@
     <string name="company_employees">Employees</string>
     <string name="company_city_state" formatted="false">%s, %s</string>
     <string name="company_achievements">Achievements</string>
+
+    <!--  Details screen  -->
+    <string name="details_description">DESCRIPTION</string>
+    <string name="details_maiden_launch">Maiden launch</string>
+    <string name="details_crew_capacity">Crew capacity</string>
+    <string name="details_active">Active</string>
+    <string name="details_specifications">SPECIFICATIONS</string>
+    <string name="details_launch_payload">Launch payload</string>
+    <string name="details_return_payload">Return payload</string>
+    <string name="details_reusable">Reusable</string>
+    <string name="details_height">Height</string>
+    <string name="details_diameter">Diameter</string>
+    <string name="details_dry_weight">Dry weight</string>
+    <string name="details_thrusters">THRUSTERS</string>
+    <string name="details_model">Model</string>
+    <string name="details_amount">Amount</string>
+    <string name="details_primary_fuel">Primary fuel</string>
+    <string name="details_oxidizer">Oxidizer</string>
+    <string name="details_thrust">Thrust</string>
+    <string name="details_isp">Isp</string>
 </resources>

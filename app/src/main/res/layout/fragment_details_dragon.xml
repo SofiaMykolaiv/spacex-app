@@ -1,0 +1,493 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:background="@color/color_background">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layout_description"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/spacing_half"
+        android:background="@drawable/background_details_rounded_corners"
+        android:padding="@dimen/spacing_half"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/header_description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/spacing_quarter"
+            android:layout_marginEnd="@dimen/spacing_quarter"
+            android:gravity="center"
+            android:text="@string/details_description"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/label_maiden_launch"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/spacing_quarter"
+            android:gravity="start"
+            android:text="@string/details_maiden_launch"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toStartOf="@+id/text_maiden_launch"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/header_description" />
+
+        <TextView
+            android:id="@+id/text_maiden_launch"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/spacing_quarter"
+            android:gravity="end"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/label_maiden_launch"
+            app:layout_constraintTop_toBottomOf="@+id/header_description"
+            tools:text="13/01/1997" />
+
+        <TextView
+            android:id="@+id/label_crew_capacity"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/spacing_quarter"
+            android:gravity="start"
+            android:text="@string/details_crew_capacity"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toStartOf="@+id/text_maiden_launch"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/label_maiden_launch" />
+
+        <TextView
+            android:id="@+id/text_crew_capacity"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/spacing_quarter"
+            android:gravity="end"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/label_maiden_launch"
+            app:layout_constraintTop_toBottomOf="@+id/text_maiden_launch"
+            tools:text="13" />
+
+        <TextView
+            android:id="@+id/label_active"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/spacing_quarter"
+            android:text="@string/details_active"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toStartOf="@+id/layout_active"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/label_crew_capacity" />
+
+        <FrameLayout
+            android:id="@+id/layout_active"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/label_active"
+            app:layout_constraintTop_toBottomOf="@id/text_crew_capacity">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_marginEnd="@dimen/spacing_quarter"
+                android:src="@drawable/ic_details"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/label_active"
+                app:layout_constraintTop_toBottomOf="@+id/text_crew_capacity"
+                tools:ignore="ContentDescription" />
+        </FrameLayout>
+
+        <View
+            android:id="@+id/divider_description"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginStart="@dimen/spacing_quarter"
+            android:layout_marginTop="@dimen/spacing_half"
+            android:layout_marginEnd="@dimen/spacing_quarter"
+            android:background="@color/white"
+            android:visibility="visible"
+            app:layout_constraintTop_toBottomOf="@+id/label_active" />
+
+        <TextView
+            android:id="@+id/text_description"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginStart="@dimen/spacing_half"
+            android:layout_marginTop="@dimen/spacing_half"
+            android:layout_marginEnd="@dimen/spacing_half"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/divider_description"
+            tools:maxLines="6"
+            tools:text="@tools:sample/lorem/random" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layout_specifications"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/spacing_half"
+        android:background="@drawable/background_details_rounded_corners"
+        android:padding="@dimen/spacing_half"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/layout_description">
+
+        <TextView
+            android:id="@+id/header_specifications"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="@dimen/spacing_quarter"
+            android:layout_marginEnd="@dimen/spacing_quarter"
+            android:gravity="center"
+            android:text="@string/details_specifications"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/label_launch_payload"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/spacing_quarter"
+            android:gravity="start"
+            android:text="@string/details_launch_payload"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toStartOf="@+id/text_launch_payload"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/header_specifications" />
+
+        <TextView
+            android:id="@+id/text_launch_payload"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/spacing_quarter"
+            android:gravity="end"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/label_launch_payload"
+            app:layout_constraintTop_toBottomOf="@+id/header_specifications"
+            tools:text="6000 kg" />
+
+        <TextView
+            android:id="@+id/label_return_payload"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/spacing_quarter"
+            android:gravity="start"
+            android:text="@string/details_return_payload"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toStartOf="@+id/text_return_payload"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/label_launch_payload" />
+
+        <TextView
+            android:id="@+id/text_return_payload"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/spacing_quarter"
+            android:gravity="end"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/label_return_payload"
+            app:layout_constraintTop_toBottomOf="@+id/text_launch_payload"
+            tools:text="3000 kg" />
+
+        <TextView
+            android:id="@+id/label_reusable"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/spacing_quarter"
+            android:text="@string/details_reusable"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toStartOf="@+id/layout_reusable"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/label_return_payload" />
+
+        <FrameLayout
+            android:id="@+id/layout_reusable"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/label_reusable"
+            app:layout_constraintTop_toBottomOf="@id/text_return_payload">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_marginEnd="@dimen/spacing_quarter"
+                android:src="@drawable/ic_details"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/label_active"
+                app:layout_constraintTop_toBottomOf="@+id/text_crew_capacity"
+                tools:ignore="ContentDescription" />
+        </FrameLayout>
+
+        <View
+            android:id="@+id/divider_specifications"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginStart="@dimen/spacing_quarter"
+            android:layout_marginTop="@dimen/spacing_half"
+            android:layout_marginEnd="@dimen/spacing_quarter"
+            android:background="@color/white"
+            android:visibility="visible"
+            app:layout_constraintTop_toBottomOf="@+id/label_reusable" />
+
+        <TextView
+            android:id="@+id/label_height"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/spacing_quarter"
+            android:layout_marginTop="@dimen/spacing_half"
+            android:gravity="start"
+            android:text="@string/details_height"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toStartOf="@+id/text_height"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/divider_specifications" />
+
+        <TextView
+            android:id="@+id/text_height"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_half"
+            android:gravity="end"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/label_height"
+            app:layout_constraintTop_toBottomOf="@+id/layout_reusable"
+            tools:text="7,2m" />
+
+        <TextView
+            android:id="@+id/label_diameter"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/spacing_quarter"
+            android:gravity="start"
+            android:text="@string/details_diameter"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toStartOf="@+id/text_diameter"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/label_height" />
+
+        <TextView
+            android:id="@+id/text_diameter"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="end"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/label_diameter"
+            app:layout_constraintTop_toBottomOf="@+id/text_height"
+            tools:text="3,7m" />
+
+        <TextView
+            android:id="@+id/label_dry_weight"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/spacing_quarter"
+            android:gravity="start"
+            android:text="@string/details_dry_weight"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toStartOf="@+id/text_dry_weight"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/label_diameter" />
+
+        <TextView
+            android:id="@+id/text_dry_weight"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/spacing_quarter"
+            android:gravity="end"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/label_dry_weight"
+            app:layout_constraintTop_toBottomOf="@+id/text_diameter"
+            tools:text="4200 kg" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layout_thrusters"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/spacing_half"
+        android:background="@drawable/background_details_rounded_corners"
+        android:padding="@dimen/spacing_half"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/layout_specifications">
+
+        <TextView
+            android:id="@+id/header_thrusters"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/spacing_quarter"
+            android:layout_marginEnd="@dimen/spacing_quarter"
+            android:gravity="center"
+            android:text="@string/details_thrusters"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/label_model"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/spacing_quarter"
+            android:gravity="start"
+            android:text="@string/details_model"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toStartOf="@+id/text_model"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/header_thrusters" />
+
+        <TextView
+            android:id="@+id/text_model"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/spacing_quarter"
+            android:gravity="end"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/label_model"
+            app:layout_constraintTop_toBottomOf="@+id/header_thrusters"
+            tools:text="Draco" />
+
+        <TextView
+            android:id="@+id/label_amount"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/spacing_quarter"
+            android:gravity="start"
+            android:text="@string/details_amount"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toStartOf="@+id/text_amount"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/label_model" />
+
+        <TextView
+            android:id="@+id/text_amount"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/spacing_quarter"
+            android:gravity="end"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/label_amount"
+            app:layout_constraintTop_toBottomOf="@+id/text_model"
+            tools:text="18" />
+
+        <TextView
+            android:id="@+id/label_primary_fuel"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/spacing_quarter"
+            android:gravity="start"
+            android:text="@string/details_primary_fuel"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toStartOf="@+id/text_primary_fuel"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/label_amount" />
+
+        <TextView
+            android:id="@+id/text_primary_fuel"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/spacing_quarter"
+            android:gravity="end"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/label_primary_fuel"
+            app:layout_constraintTop_toBottomOf="@+id/text_amount"
+            tools:text="Monomethylhydzarine" />
+
+        <TextView
+            android:id="@+id/label_oxidizer"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/spacing_quarter"
+            android:gravity="start"
+            android:text="@string/details_oxidizer"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toStartOf="@+id/text_oxidizer"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/label_primary_fuel" />
+
+        <TextView
+            android:id="@+id/text_oxidizer"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/spacing_quarter"
+            android:gravity="end"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/label_oxidizer"
+            app:layout_constraintTop_toBottomOf="@+id/text_primary_fuel"
+            tools:text="Nitrogen tetroxide" />
+
+        <TextView
+            android:id="@+id/label_thrust"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/spacing_quarter"
+            android:gravity="start"
+            android:text="@string/details_thrust"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toStartOf="@+id/text_thrust"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/label_oxidizer" />
+
+        <TextView
+            android:id="@+id/text_thrust"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/spacing_quarter"
+            android:gravity="end"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/label_thrust"
+            app:layout_constraintTop_toBottomOf="@+id/text_oxidizer"
+            tools:text="0,4 kN" />
+
+        <TextView
+            android:id="@+id/label_isp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/spacing_quarter"
+            android:gravity="start"
+            android:text="@string/details_isp"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toStartOf="@+id/text_isp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/label_thrust" />
+
+        <TextView
+            android:id="@+id/text_isp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/spacing_quarter"
+            android:gravity="end"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/label_isp"
+            app:layout_constraintTop_toBottomOf="@+id/text_thrust"
+            tools:text="300 s" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
