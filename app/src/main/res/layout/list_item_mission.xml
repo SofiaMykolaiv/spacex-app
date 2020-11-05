@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="model"
+            type="com.example.spacex_app.presentation.model.shipModel.MissionModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layout_missions"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/spacing_quarter"
+        android:background="@drawable/background_details_rounded_corners"
+        android:padding="@dimen/spacing_quarter">
+
+        <TextView
+            android:id="@+id/label_mission"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/spacing_quarter"
+            android:gravity="start"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toStartOf="@+id/text_mission"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/layout_missions"
+            tools:text="@string/details_mission" />
+
+        <TextView
+            android:id="@+id/text_mission"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/spacing_quarter"
+            android:gravity="end"
+            android:text="@{model.name}"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/label_mission"
+            app:layout_constraintTop_toTopOf="@id/layout_missions"
+            tools:text="CRS-5" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

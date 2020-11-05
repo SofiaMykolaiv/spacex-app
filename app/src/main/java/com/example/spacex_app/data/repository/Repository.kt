@@ -15,32 +15,37 @@ class Repository : BaseRepository {
     private val apiService by inject<ApiService>()
 
     suspend fun loadCapsuleList(): List<CapsuleResponse> {
-        val capsuleListResponse = apiService.getCapsulesList()
+        val capsuleListResponse = apiService.loadCapsulesList()
         return capsuleListResponse
     }
 
     suspend fun loadCapsuleUpcomingList(): List<CapsuleResponse> {
-        val capsuleUpcomingListResponse = apiService.getUpcomingCapsulesList()
+        val capsuleUpcomingListResponse = apiService.loadUpcomingCapsulesList()
         return capsuleUpcomingListResponse
     }
 
     suspend fun loadPastCapsuleList(): List<CapsuleResponse> {
-        val capsulePastListResponse = apiService.getPastCapsulesList()
+        val capsulePastListResponse = apiService.loadPastCapsulesList()
         return capsulePastListResponse
     }
 
     suspend fun loadDragonList(): List<DragonResponse> {
-        val dragonListResponse = apiService.getDragonList()
+        val dragonListResponse = apiService.loadDragonList()
         return dragonListResponse
     }
 
+    suspend fun loadDragonDetails(dragonId: String): DragonResponse {
+        val dragonResponse = apiService.loadDragonsDetails(dragonId)
+        return dragonResponse
+    }
+
     suspend fun loadInfo(): InfoResponse {
-        val infoResponse = apiService.getInfo()
+        val infoResponse = apiService.loadInfo()
         return infoResponse
     }
 
     suspend fun loadHistoryList(): List<HistoryResponse> {
-        val historyListResponse = apiService.getHistoryList()
+        val historyListResponse = apiService.loadHistoryList()
         return historyListResponse
     }
 
@@ -59,18 +64,33 @@ class Repository : BaseRepository {
         return upcomingLaunchListResponse
     }
 
-    suspend fun loadLatestLaunchList(): List<LaunchResponse>{
+    suspend fun loadLatestLaunchList(): List<LaunchResponse> {
         val latestLaunchListResponse = apiService.loadPastLaunchList()
         return latestLaunchListResponse
     }
 
-    suspend fun loadRocketList(): List<RocketResponse> {
-        val rocketListResponse = apiService.getRocketList()
-        return rocketListResponse
+    suspend fun loadLaunchDetails(launchId: String): LaunchResponse {
+        val launchResponse = apiService.loadLaunchDetails(launchId)
+        return launchResponse
     }
 
     suspend fun loadShipList(): List<ShipResponse> {
-        val shipListResponse = apiService.getShipList()
+        val shipListResponse = apiService.loadShipList()
         return shipListResponse
+    }
+
+    suspend fun loadShipDetails(shipId: String): ShipResponse {
+        val shipResponse = apiService.loadShipDetails(shipId)
+        return shipResponse
+    }
+
+    suspend fun loadRocketList(): List<RocketResponse> {
+        val rocketListResponse = apiService.loadRocketList()
+        return rocketListResponse
+    }
+
+    suspend fun loadRocketDetails(rocketId: String): RocketResponse {
+        val rocketResponse = apiService.loadRocketDetails(rocketId)
+        return rocketResponse
     }
 }

@@ -1,6 +1,7 @@
 package com.example.spacex_app.presentation.fragment
 
 import android.os.Bundle
+import androidx.lifecycle.observe
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.spacex_app.R
 import com.example.spacex_app.presentation.adapter.LaunchAdapter
@@ -9,7 +10,7 @@ import com.example.spacex_app.utiles.showSimpleErrorDialog
 import kotlinx.android.synthetic.main.fragment_latest.*
 import org.koin.android.ext.android.inject
 
-class LatestFragment : BaseFragment<LatestViewModel>() {
+class LatestFragment(val name: String) : BaseFragment<LatestViewModel>() {
 
     private lateinit var launchAdapter: LaunchAdapter
 

@@ -8,11 +8,11 @@ data class CoreModel (
     var coreSerial: String? = "",
     var flight: String? = "",
     var block: Int? = 0,
-    var gridfins: String? = "",
+    var gridfins: Boolean? = false,
     var legs: String? = "",
     var reused: Boolean? = false,
-    var landSuccess: String? = "",
-    var landingIntent: String? = "",
+    var landSuccess: Boolean? = false,
+    var landingIntent: Boolean? = false,
     var landingType: String? = "",
     var landingVehicle: String? = ""
 ): Parcelable

@@ -102,11 +102,12 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="end"
                 android:layout_marginEnd="@dimen/spacing_quarter"
-                android:src="@drawable/ic_details"
+                android:src="@drawable/ic_details_active"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/label_active"
                 app:layout_constraintTop_toBottomOf="@+id/text_crew_capacity"
-                tools:ignore="ContentDescription" />
+                tools:ignore="ContentDescription"
+                android:id="@+id/image_active"/>
         </FrameLayout>
 
         <View
@@ -231,11 +232,12 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="end"
                 android:layout_marginEnd="@dimen/spacing_quarter"
-                android:src="@drawable/ic_details"
+                android:src="@drawable/ic_details_active"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/label_active"
                 app:layout_constraintTop_toBottomOf="@+id/text_crew_capacity"
-                tools:ignore="ContentDescription" />
+                tools:ignore="ContentDescription"
+                android:id="@+id/image_details_reusable"/>
         </FrameLayout>
 
         <View
@@ -359,7 +361,7 @@
             app:layout_constraintTop_toBottomOf="@+id/header_thrusters" />
 
         <TextView
-            android:id="@+id/text_model"
+            android:id="@+id/text_model_thrusters"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginEnd="@dimen/spacing_quarter"
@@ -391,7 +393,7 @@
             android:textColor="@color/white"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/label_amount"
-            app:layout_constraintTop_toBottomOf="@+id/text_model"
+            app:layout_constraintTop_toBottomOf="@+id/text_model_thrusters"
             tools:text="18" />
 
         <TextView

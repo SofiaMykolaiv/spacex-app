@@ -1,6 +1,5 @@
 package com.example.spacex_app.presentation.fragment
 
-
 import android.os.Bundle
 import android.util.TypedValue
 import android.view.LayoutInflater

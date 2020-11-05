@@ -1,0 +1,354 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:background="@color/color_background">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layout_description"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/spacing_half"
+        android:background="@drawable/background_details_rounded_corners"
+        android:padding="@dimen/spacing_half"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        >
+
+        <TextView
+            android:id="@+id/header_description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/spacing_quarter"
+            android:layout_marginEnd="@dimen/spacing_quarter"
+            android:gravity="center"
+            android:text="@string/details_description"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/label_home_port"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/spacing_quarter"
+            android:gravity="start"
+            android:text="@string/details_home_port"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toStartOf="@+id/text_home_port"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/header_description" />
+
+        <TextView
+            android:id="@+id/text_home_port"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/spacing_quarter"
+            android:gravity="end"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/label_home_port"
+            app:layout_constraintTop_toBottomOf="@+id/header_description"
+            tools:text="Port of Los Angeles" />
+
+        <TextView
+            android:id="@+id/label_built_date"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/spacing_quarter"
+            android:gravity="start"
+            android:text="@string/details_build_date"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toStartOf="@+id/text_built_date"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/label_home_port" />
+
+        <TextView
+            android:id="@+id/text_built_date"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/spacing_quarter"
+            android:gravity="end"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/label_home_port"
+            app:layout_constraintTop_toBottomOf="@+id/text_home_port"
+            tools:text="January 2020" />
+
+        <View
+            android:id="@+id/divider_description"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginStart="@dimen/spacing_quarter"
+            android:layout_marginTop="@dimen/spacing_half"
+            android:layout_marginEnd="@dimen/spacing_quarter"
+            android:background="@color/white"
+            android:visibility="visible"
+            app:layout_constraintTop_toBottomOf="@+id/label_built_date" />
+
+        <TextView
+            android:id="@+id/label_feature"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/spacing_quarter"
+            android:gravity="start"
+            android:text="@string/details_feature"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toStartOf="@+id/text_feature"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/divider_description" />
+
+        <TextView
+            android:id="@+id/text_feature"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/spacing_quarter"
+            android:gravity="end"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/label_feature"
+            app:layout_constraintTop_toBottomOf="@+id/divider_description"
+            tools:text="Cargo" />
+
+        <TextView
+            android:id="@+id/label_model"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/spacing_quarter"
+            android:gravity="start"
+            android:text="@string/details_model"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toStartOf="@+id/text_model"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/label_feature" />
+
+        <TextView
+            android:id="@+id/text_model"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/spacing_quarter"
+            android:gravity="end"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/label_model"
+            app:layout_constraintTop_toBottomOf="@+id/label_feature"
+            tools:text="Merlin 1C" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layout_specifications"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/spacing_half"
+        android:background="@drawable/background_details_rounded_corners"
+        android:padding="@dimen/spacing_half"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/layout_description">
+
+        <TextView
+            android:id="@+id/header_specifications"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="@dimen/spacing_quarter"
+            android:layout_marginEnd="@dimen/spacing_quarter"
+            android:gravity="center"
+            android:text="@string/details_specifications"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/label_primary_role"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/spacing_quarter"
+            android:gravity="start"
+            android:text="@string/details_primary_role"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toStartOf="@+id/text_primary_role"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/header_specifications" />
+
+        <TextView
+            android:id="@+id/text_primary_role"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/spacing_quarter"
+            android:gravity="end"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/label_primary_role"
+            app:layout_constraintTop_toBottomOf="@+id/header_specifications"
+            tools:text="Support Ship" />
+
+        <TextView
+            android:id="@+id/label_secondary_role"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/spacing_quarter"
+            android:gravity="start"
+            android:text="@string/details_secondary_role"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toStartOf="@+id/text_secondary_role"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/label_primary_role" />
+
+        <TextView
+            android:id="@+id/text_secondary_role"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/spacing_quarter"
+            android:gravity="end"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/label_secondary_role"
+            app:layout_constraintTop_toBottomOf="@+id/text_primary_role"
+            tools:text="Dragon Recovery" />
+
+        <TextView
+            android:id="@+id/label_status"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/spacing_quarter"
+            android:gravity="start"
+            android:text="@string/details_status"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toStartOf="@+id/text_status"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/label_secondary_role" />
+
+        <TextView
+            android:id="@+id/text_status"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/spacing_quarter"
+            android:gravity="end"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/label_status"
+            app:layout_constraintTop_toBottomOf="@+id/text_secondary_role"
+            tools:text="" />
+
+        <TextView
+            android:id="@+id/label_coordinates"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/spacing_quarter"
+            android:gravity="start"
+            android:text="@string/details_coordinates"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toStartOf="@+id/text_coordinates"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/label_status" />
+
+        <TextView
+            android:id="@+id/text_coordinates"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/spacing_quarter"
+            android:gravity="end"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/label_coordinates"
+            app:layout_constraintTop_toBottomOf="@+id/text_status"
+            tools:text="Unknown" />
+
+        <View
+            android:id="@+id/divider_specifications"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginStart="@dimen/spacing_quarter"
+            android:layout_marginTop="@dimen/spacing_half"
+            android:layout_marginEnd="@dimen/spacing_quarter"
+            android:background="@color/white"
+            android:visibility="visible"
+            app:layout_constraintTop_toBottomOf="@+id/label_coordinates" />
+
+        <TextView
+            android:id="@+id/label_weight"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/spacing_quarter"
+            android:gravity="start"
+            android:text="@string/details_weight"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toStartOf="@+id/text_weight"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/divider_specifications" />
+
+        <TextView
+            android:id="@+id/text_weight"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/spacing_quarter"
+            android:gravity="end"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/label_weight"
+            app:layout_constraintTop_toBottomOf="@+id/divider_specifications"
+            tools:text="440 892 kg" />
+
+        <TextView
+            android:id="@+id/label_current_speed"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/spacing_quarter"
+            android:gravity="start"
+            android:text="@string/details_current_speed"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toStartOf="@+id/text_current_speed"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/label_weight" />
+
+        <TextView
+            android:id="@+id/text_current_speed"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/spacing_quarter"
+            android:gravity="end"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/label_current_speed"
+            app:layout_constraintTop_toBottomOf="@+id/text_weight"
+            tools:text="Unknown" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layout_missions"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/spacing_half"
+        android:background="@drawable/background_details_rounded_corners"
+        android:padding="@dimen/spacing_half"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/layout_specifications">
+
+        <TextView
+            android:id="@+id/header_missions"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/spacing_quarter"
+            android:layout_marginEnd="@dimen/spacing_quarter"
+            android:gravity="center"
+            android:text="@string/details_missions_title"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_view_mission"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/header_missions" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

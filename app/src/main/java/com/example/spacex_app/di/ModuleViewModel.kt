@@ -13,4 +13,8 @@ val viewModelModule = module {
     viewModel { SplashViewModel() }
     viewModel { UpcomingViewModel() }
     viewModel { VehiclesViewModel() }
+    viewModel { ShipDetailsViewModel() }
+    viewModel { RocketDetailsViewModel() }
+    viewModel { LaunchDetailsViewModel() }
+    viewModel { DragonDetailsViewModel() }
 }

@@ -8,26 +8,30 @@ import com.example.spacex_app.data.network.response.launchResponse.LaunchRespons
 import com.example.spacex_app.data.network.response.rocketResponse.RocketResponse
 import com.example.spacex_app.data.network.response.shipResponse.ShipResponse
 import retrofit2.http.GET
+import retrofit2.http.Query
 
 interface ApiService {
 
     @GET("/v3/capsules")
-    suspend fun getCapsulesList(): List<CapsuleResponse>
+    suspend fun loadCapsulesList(): List<CapsuleResponse>
 
     @GET("/v3/capsules/upcoming")
-    suspend fun getUpcomingCapsulesList(): List<CapsuleResponse>
+    suspend fun loadUpcomingCapsulesList(): List<CapsuleResponse>
 
     @GET("/v3/capsules/past")
-    suspend fun getPastCapsulesList(): List<CapsuleResponse>
+    suspend fun loadPastCapsulesList(): List<CapsuleResponse>
 
     @GET("/v3/dragons")
-    suspend fun getDragonList(): List<DragonResponse>
+    suspend fun loadDragonList(): List<DragonResponse>
+
+    @GET("/v3/dragons")
+    suspend fun loadDragonsDetails(@Query("dragon_id")dragonId: String): DragonResponse
 
     @GET("/v3/info")
-    suspend fun getInfo(): InfoResponse
+    suspend fun loadInfo(): InfoResponse
 
     @GET("/v3/history")
-    suspend fun getHistoryList(): List<HistoryResponse>
+    suspend fun loadHistoryList(): List<HistoryResponse>
 
     @GET("/v3/launches")
     suspend fun loadLaunchList(): List<LaunchResponse>
@@ -41,9 +45,18 @@ interface ApiService {
     @GET("/v3/launches/past")
     suspend fun loadPastLaunchList(): List<LaunchResponse>
 
-    @GET("/v3/rockets")
-    suspend fun getRocketList(): List<RocketResponse>
+    @GET("/v3/launches")
+    suspend fun loadLaunchDetails(@Query("launch_id") launchId: String): LaunchResponse
 
     @GET("/v3/ships")
-    suspend fun getShipList(): List<ShipResponse>
+    suspend fun loadShipList(): List<ShipResponse>
+
+    @GET("/v3/ships")
+    suspend fun loadShipDetails(@Query("ship_id") shipId: String): ShipResponse
+
+    @GET("/v3/rockets")
+    suspend fun loadRocketList(): List<RocketResponse>
+
+    @GET("/v3/rockets")
+    suspend fun loadRocketDetails(@Query("rocket_id") rocketId: String): RocketResponse
 }
