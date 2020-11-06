@@ -10,7 +10,7 @@ import com.example.spacex_app.utiles.showSimpleErrorDialog
 import kotlinx.android.synthetic.main.fragment_latest.*
 import org.koin.android.ext.android.inject
 
-class LatestFragment(val name: String) : BaseFragment<LatestViewModel>() {
+class LatestFragment : BaseFragment<LatestViewModel>() {
 
     private lateinit var launchAdapter: LaunchAdapter
 

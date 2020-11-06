@@ -1,5 +1,6 @@
 package com.example.spacex_app.presentation.viewmodel
 
+import androidx.lifecycle.LiveData
 import androidx.lifecycle.MediatorLiveData
 import androidx.lifecycle.MutableLiveData
 import com.example.spacex_app.data.repository.Repository
@@ -15,16 +16,18 @@ import org.koin.core.inject
 
 class VehiclesViewModel : BaseViewModel() {
 
-    private val repository by inject<Repository> ()
+    private val repository by inject<Repository>()
 
     private val dragonLiveData = MutableLiveData<List<VehicleModel>>()
     private val shipLiveData = MutableLiveData<List<VehicleModel>>()
     private val rocketLiveData = MutableLiveData<List<VehicleModel>>()
 
-    val vehiclesMediatorLiveData = MediatorLiveData<List<VehicleModel>>()
+    private val vehiclesMediatorLiveData = MediatorLiveData<List<VehicleModel>>()
+    val vehiclesLiveData: LiveData<List<VehicleModel>> = vehiclesMediatorLiveData
 
-    var count = COUNT_DEFAULT
-    var vehicleList = ArrayList<VehicleModel>()
+    private var count = COUNT_DEFAULT
+    private val countMutableLiveData = MutableLiveData<Int>()
+    val countLiveData: LiveData<Int> = countMutableLiveData
 
     companion object {
         private const val COUNT_DEFAULT = 0
@@ -33,34 +36,31 @@ class VehiclesViewModel : BaseViewModel() {
 
     init {
         vehiclesMediatorLiveData.addSource(dragonLiveData) { value ->
-            count++
-            vehicleList.addAll(value)
+            countMutableLiveData.value = ++count
             vehiclesMediatorLiveData.value = value
             hideProgress()
         }
         vehiclesMediatorLiveData.addSource(shipLiveData) { value ->
-            count++
-            vehicleList.addAll(value)
+            countMutableLiveData.value = ++count
             vehiclesMediatorLiveData.value = value
             hideProgress()
         }
         vehiclesMediatorLiveData.addSource(rocketLiveData) { value ->
-            count++
-            vehicleList.addAll(value)
+            countMutableLiveData.value = ++count
             vehiclesMediatorLiveData.value = value
             hideProgress()
         }
     }
 
     fun getVehicleAsyncData() = CoroutineScope(Dispatchers.Main).launch {
-        loadingLiveData.value = true
+        //loadingLiveData.value = true
         getDragonListNetwork()
         getShipListNetwork()
         getRocketListNetwork()
     }
 
     private fun hideProgress() {
-        if (count == COUNT_ALL_SOURCES) {
+        if (countMutableLiveData.value == COUNT_ALL_SOURCES) {
             loadingLiveData.value = false
         }
     }

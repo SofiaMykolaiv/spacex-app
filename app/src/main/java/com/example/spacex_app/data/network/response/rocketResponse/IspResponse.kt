@@ -1,6 +1,8 @@
 package com.example.spacex_app.data.network.response.rocketResponse
 
+import com.google.gson.annotations.SerializedName
+
 data class IspResponse(
-    var sea_level: Int? = 0,
-    var vacuum: Int? = 0
+    @SerializedName(value = "sea_level") var sea_level: Int? = 0,
+    @SerializedName(value = "vacuum") var vacuum: Int? = 0
 )

@@ -1,6 +1,8 @@
 package com.example.spacex_app.data.network.response.dragonResponse
 
+import com.google.gson.annotations.SerializedName
+
 data class CargoResponse(
-    var solar_array: Int? = 0,
-    var unpressurized_cargo: Boolean? = false
+    @SerializedName(value = "solar_array")  var solar_array: Int? = 0,
+    @SerializedName(value = "unpressurized_cargo")var unpressurized_cargo: Boolean? = false
 )

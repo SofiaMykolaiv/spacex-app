@@ -1,6 +1,8 @@
 package com.example.spacex_app.data.network.response.rocketResponse
 
+import com.google.gson.annotations.SerializedName
+
 data class ThrustVacuumResponse(
-    var kN: Int? = 0,
-    var lbf: Int? = 0
+    @SerializedName(value = "kN") var kN: Int? = 0,
+    @SerializedName(value = "lbf") var lbf: Int? = 0
 )

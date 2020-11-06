@@ -1,6 +1,8 @@
 package com.example.spacex_app.data.network.response.shipResponse
 
+import com.google.gson.annotations.SerializedName
+
 data class MissionResponse(
-    var name: String? = "",
-    var flighr: Int? = 0
+    @SerializedName(value = "name") var name: String? = "",
+    @SerializedName(value = "flighr") var flighr: Int? = 0
 )

@@ -13,6 +13,10 @@ class VehiclesFragment : BaseFragment<VehiclesViewModel>() {
 
     private lateinit var vehicleAdapter: VehicleAdapter
 
+    companion object {
+        private const val COUNT_MAX = 3
+    }
+
     override val viewModel by inject<VehiclesViewModel>()
 
     override fun getLayoutRes() = R.layout.fragment_vehicles
@@ -31,9 +35,11 @@ class VehiclesFragment : BaseFragment<VehiclesViewModel>() {
     }
 
     private fun observeData() {
-        viewModel.vehiclesMediatorLiveData.observe(viewLifecycleOwner, { list ->
-            if (viewModel.count == VehiclesViewModel.COUNT_ALL_SOURCES) {
-                vehicleAdapter.vehicleList = viewModel.vehicleList
+        viewModel.countLiveData.observe(viewLifecycleOwner, { count ->
+            if (count == COUNT_MAX) {
+                viewModel.vehiclesLiveData.value?.let { vehicleList ->
+                    vehicleAdapter.vehicleList = vehicleList.toMutableList()
+                }
             }
         })
         viewModel.errorMessageLiveData.observe(viewLifecycleOwner, { exceptionMessage ->

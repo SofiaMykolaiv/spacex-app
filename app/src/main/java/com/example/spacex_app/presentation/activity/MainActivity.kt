@@ -6,6 +6,7 @@ import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
+import coil.load
 import com.example.spacex_app.R
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -19,6 +20,8 @@ class MainActivity : BaseActivity() {
         val navController = findNavController(R.id.fragment_nav_host)
         setupActionBar(navController)
         bottom_navigation.setupWithNavController(navController = navController)
+
+        image_header.load(R.drawable.bg_header)
     }
 
     private fun setupActionBar(navController: NavController) {
