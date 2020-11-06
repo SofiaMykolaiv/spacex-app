@@ -17,7 +17,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/color_background"
+            android:background="@drawable/ripple_item"
             android:gravity="center_vertical"
             android:orientation="horizontal"
             android:padding="@dimen/spacing_middle">
