@@ -1,11 +1,7 @@
 package com.example.spacex_app.data.repository
 
-import com.example.spacex_app.data.database.dao.DragonDao
-import com.example.spacex_app.data.database.dao.RocketDao
-import com.example.spacex_app.data.database.dao.ShipDao
-import com.example.spacex_app.data.database.entity.DragonEntity
-import com.example.spacex_app.data.database.entity.RocketEntity
-import com.example.spacex_app.data.database.entity.ShipEntity
+import com.example.spacex_app.data.database.dao.VehicleDao
+import com.example.spacex_app.data.database.entity.VehicleEntity
 import com.example.spacex_app.data.network.response.capsuleResponse.CapsuleResponse
 import com.example.spacex_app.data.network.response.dragonResponse.DragonResponse
 import com.example.spacex_app.data.network.response.historyResponse.HistoryResponse
@@ -19,9 +15,7 @@ import org.koin.core.inject
 class Repository : BaseRepository {
 
     private val apiService by inject<ApiService>()
-    private val rocketDao by inject<RocketDao>()
-    private val shipDao by inject<ShipDao>()
-    private val dragonDao by inject<DragonDao>()
+    private val vehicleDao by inject<VehicleDao>()
 
 
     suspend fun loadCapsuleList(): List<CapsuleResponse> {
@@ -42,11 +36,6 @@ class Repository : BaseRepository {
     suspend fun loadDragonList(): List<DragonResponse> {
         val dragonListResponse = apiService.loadDragonList()
         return dragonListResponse
-    }
-
-    suspend fun loadDragonListDatabase(): List<DragonEntity> {
-        val dragonList = dragonDao.getDragonList()
-        return dragonList
     }
 
     suspend fun loadDragonDetails(dragonId: String): DragonResponse {
@@ -94,11 +83,6 @@ class Repository : BaseRepository {
         return shipListResponse
     }
 
-    suspend fun getShipListDatabase(): List<ShipEntity> {
-        val shipList = shipDao.getShipList()
-        return shipList
-    }
-
     suspend fun loadShipDetails(shipId: String): ShipResponse {
         val shipResponse = apiService.loadShipDetails(shipId)
         return shipResponse
@@ -109,13 +93,22 @@ class Repository : BaseRepository {
         return rocketListResponse
     }
 
-    suspend fun getRocketListDatabase(): List<RocketEntity> {
-        val rocketList = rocketDao.getRocketList()
-        return rocketList
-    }
-
     suspend fun loadRocketDetails(rocketId: String): RocketResponse {
         val rocketResponse = apiService.loadRocketDetails(rocketId)
         return rocketResponse
+    }
+
+
+// Database requests
+
+    suspend fun saveVehicleListDatabase(vehicleList: List<VehicleEntity>?) {
+        vehicleList?.let { list ->
+            vehicleDao.insert(list)
+        }
+    }
+
+    suspend fun loadVehicleListDatabase(): List<VehicleEntity> {
+        val vehicleList = vehicleDao.getVehicleList()
+        return vehicleList
     }
 }

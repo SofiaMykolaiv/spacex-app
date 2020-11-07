@@ -1,5 +1,6 @@
 package com.example.spacex_app.presentation.mapper
 
+import com.example.spacex_app.data.database.entity.VehicleEntity
 import com.example.spacex_app.data.network.response.dragonResponse.DragonResponse
 import com.example.spacex_app.data.network.response.rocketResponse.RocketResponse
 import com.example.spacex_app.data.network.response.shipResponse.ShipResponse
@@ -39,4 +40,14 @@ fun mapRocketResponseToModel(rocketListResponse: List<RocketResponse>?) =
                 buildDate = rocketResponse.first_flight
             )
         }
+    }
+
+fun mapVehicleEntityToModel(vehicleListEntity: List<VehicleEntity>?) =
+    vehicleListEntity?.map { vehicleEntity ->
+        VehicleModel(
+            id = vehicleEntity.id,
+            name = vehicleEntity.name,
+            imageUrl = vehicleEntity.imageUrl,
+            buildDate = vehicleEntity.buildDate
+        )
     }

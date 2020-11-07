@@ -24,8 +24,8 @@ class VehiclesFragment : BaseFragment<VehiclesViewModel>() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         setAdapter()
-        viewModel.getVehicleAsyncData()
         observeData()
+        viewModel.getVehicleListDatabase()
     }
 
     private fun setAdapter() {
@@ -35,12 +35,8 @@ class VehiclesFragment : BaseFragment<VehiclesViewModel>() {
     }
 
     private fun observeData() {
-        viewModel.countLiveData.observe(viewLifecycleOwner, { count ->
-            if (count == COUNT_MAX) {
-                viewModel.vehiclesLiveData.value?.let { vehicleList ->
-                    vehicleAdapter.vehicleList = vehicleList.toMutableList()
-                }
-            }
+        viewModel.vehiclesLiveData.observe(viewLifecycleOwner, { vehicleList ->
+            vehicleAdapter.vehicleList = vehicleList.toMutableList()
         })
         viewModel.errorMessageLiveData.observe(viewLifecycleOwner, { exceptionMessage ->
             showSimpleErrorDialog(context, null, exceptionMessage, null, null)
