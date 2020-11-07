@@ -24,5 +24,6 @@
         </activity>
 
         <activity android:name=".presentation.activity.MainActivity" />
+        <activity android:name=".presentation.activity.VehicleDetailsActivity" />
     </application>
 </manifest>

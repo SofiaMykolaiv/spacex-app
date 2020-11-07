@@ -14,7 +14,5 @@ val viewModelModule = module {
     viewModel { UpcomingViewModel() }
     viewModel { VehiclesViewModel() }
     viewModel { ShipDetailsViewModel() }
-    viewModel { RocketDetailsViewModel() }
-    viewModel { LaunchDetailsViewModel() }
-    viewModel { DragonDetailsViewModel() }
+    viewModel { VehicleDetailsViewModel() }
 }

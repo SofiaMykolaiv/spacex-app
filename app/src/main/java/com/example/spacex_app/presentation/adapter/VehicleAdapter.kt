@@ -11,7 +11,9 @@ import com.example.spacex_app.constants.ImageConstants
 import com.example.spacex_app.databinding.ListItemVehicleBinding
 import com.example.spacex_app.presentation.model.vehicleModel.VehicleModel
 
-class VehicleAdapter : RecyclerView.Adapter<VehicleAdapter.ViewHolder>() {
+class VehicleAdapter(
+    private val clickListener: (VehicleModel) -> Unit
+) : RecyclerView.Adapter<VehicleAdapter.ViewHolder>() {
 
     var vehicleList = mutableListOf<VehicleModel>()
         set(value) {
@@ -24,17 +26,26 @@ class VehicleAdapter : RecyclerView.Adapter<VehicleAdapter.ViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val inflater = LayoutInflater.from(parent.context)
         val holder = ListItemVehicleBinding.inflate(inflater, parent, false)
-        return ViewHolder(holder)
+        return ViewHolder(holder, clickListener)
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.bind(vehicleList[position])
     }
 
-    class ViewHolder(private val binding: ListItemVehicleBinding) :
-        RecyclerView.ViewHolder(binding.root) {
+    class ViewHolder(
+        private val binding: ListItemVehicleBinding,
+        private val listener: (VehicleModel) -> Unit
+    ) : RecyclerView.ViewHolder(binding.root) {
+
+        private lateinit var item: VehicleModel
+
+        init {
+            binding.layoutVehicle.setOnClickListener { listener(item) }
+        }
 
         fun bind(model: VehicleModel) {
+            item = model
             binding.model = model
             if (model.imageUrl != null) {
                 binding.imageVehicle.load(model.imageUrl) {

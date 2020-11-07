@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_vehicle_details"
+    app:startDestination="@id/vehicles_fragment">
+
+    <!--  VehicleDetailsFragment  -->
+    <fragment
+        android:id="@+id/vehicles_fragment"
+        android:name="com.example.spacex_app.presentation.fragment.VehicleDetailsFragment"
+        android:label="@string/header_vehicles_fragment"
+        tools:layout="@layout/fragment_details_vehicle"/>
+</navigation>

@@ -8,5 +8,6 @@ data class VehicleModel(
     var id: String? = "",
     var name: String? = "",
     var imageUrl: String? = "",
-    var buildDate: String? = ""
+    var buildDate: String? = "",
+    var description : String? = ""
 ) : Parcelable

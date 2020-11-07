@@ -111,4 +111,9 @@ class Repository : BaseRepository {
         val vehicleList = vehicleDao.getVehicleList()
         return vehicleList
     }
+
+    suspend fun getVehicleDetailsById(vehicleId: String): VehicleEntity {
+        val response = vehicleDao.getVehicleEntityById(vehicleId)
+        return response
+    }
 }

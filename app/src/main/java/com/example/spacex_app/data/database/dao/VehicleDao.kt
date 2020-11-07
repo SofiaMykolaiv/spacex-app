@@ -20,4 +20,7 @@ interface VehicleDao {
 
     @Query("SELECT * FROM TABLE_VEHICLE ORDER BY buildDate DESC")
     suspend fun getVehicleList(): List<VehicleEntity>
+
+    @Query("SELECT * FROM TABLE_VEHICLE WHERE ID = :vehicleId")
+    suspend fun getVehicleEntityById(vehicleId: String): VehicleEntity
 }

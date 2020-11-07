@@ -17,6 +17,7 @@
     <string name="header_upcoming">Upcoming</string>
     <string name="header_latest">Latest</string>
     <string name="header_about_spacex">About SpaceX</string>
+    <string name="header_vehicles_fragment">Vehicles fragment</string>
 
     <!--  Home screen:  -->
     <string name="home_launched_by">Launched by Falcon 9</string>

@@ -1,9 +1,13 @@
 package com.example.spacex_app.presentation.fragment
 
+import android.content.Intent
 import android.os.Bundle
+import androidx.core.os.bundleOf
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.spacex_app.R
+import com.example.spacex_app.presentation.activity.VehicleDetailsActivity
 import com.example.spacex_app.presentation.adapter.VehicleAdapter
+import com.example.spacex_app.presentation.model.vehicleModel.VehicleModel
 import com.example.spacex_app.presentation.viewmodel.VehiclesViewModel
 import com.example.spacex_app.utiles.showSimpleErrorDialog
 import kotlinx.android.synthetic.main.fragment_vehicles.*
@@ -29,7 +33,9 @@ class VehiclesFragment : BaseFragment<VehiclesViewModel>() {
     }
 
     private fun setAdapter() {
-        vehicleAdapter = VehicleAdapter()
+        vehicleAdapter = VehicleAdapter {
+            onVehicleClick(it)
+        }
         recycler_view.layoutManager = LinearLayoutManager(activity)
         recycler_view.adapter = vehicleAdapter
     }
@@ -45,4 +51,12 @@ class VehiclesFragment : BaseFragment<VehiclesViewModel>() {
             setLoadingState(isLoading)
         })
     }
+
+    private fun onVehicleClick(vehicleModel: VehicleModel) {
+        val intent = Intent(requireContext(), VehicleDetailsActivity::class.java)
+        val bundle = bundleOf("keyVehicleId" to vehicleModel.id)
+        intent.putExtra("keyVehicleId", vehicleModel.id)
+        startActivity(intent)
+    }
+
 }

@@ -13,7 +13,8 @@ fun mapDragonResponseToModel(dragonListResponse: List<DragonResponse>?) =
                 id = dragonResponse.id,
                 name = dragonResponse.name,
                 imageUrl = dragonResponse.flickr_images?.get(0),
-                buildDate = dragonResponse.first_flight
+                buildDate = dragonResponse.first_flight,
+                description = dragonResponse.description
             )
         }
     }
@@ -25,7 +26,8 @@ fun mapShipResponseToModel(shipListResponse: List<ShipResponse>?) =
                 id = shipResponse.ship_id,
                 name = shipResponse.ship_name,
                 imageUrl = shipResponse.image,
-                buildDate = shipResponse.year_built.toString()
+                buildDate = shipResponse.year_built.toString(),
+                description = shipResponse.home_port
             )
         }
     }
@@ -37,7 +39,9 @@ fun mapRocketResponseToModel(rocketListResponse: List<RocketResponse>?) =
                 id = rocketResponse.rocket_id,
                 name = rocketResponse.rocket_name,
                 imageUrl = rocketResponse.flickr_images?.get(0),
-                buildDate = rocketResponse.first_flight
+                buildDate = rocketResponse.first_flight,
+                description = rocketResponse.description
+
             )
         }
     }
@@ -48,6 +52,16 @@ fun mapVehicleEntityToModel(vehicleListEntity: List<VehicleEntity>?) =
             id = vehicleEntity.id,
             name = vehicleEntity.name,
             imageUrl = vehicleEntity.imageUrl,
-            buildDate = vehicleEntity.buildDate
+            buildDate = vehicleEntity.buildDate,
+            description = vehicleEntity.description
         )
     }
+
+fun mapVehicleEntityToModel(vehicleEntity: VehicleEntity) =
+    VehicleModel(
+        id = vehicleEntity.id,
+        name = vehicleEntity.name,
+        imageUrl = vehicleEntity.imageUrl,
+        buildDate = vehicleEntity.buildDate,
+        description = vehicleEntity.description
+    )
