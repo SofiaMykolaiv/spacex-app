@@ -2,6 +2,7 @@ package com.example.spacex_app.presentation.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.core.view.ViewCompat
 import androidx.recyclerview.widget.RecyclerView
 import coil.load
 import coil.transform.CircleCropTransformation
@@ -10,6 +11,7 @@ import com.example.spacex_app.R
 import com.example.spacex_app.constants.ImageConstants
 import com.example.spacex_app.databinding.ListItemVehicleBinding
 import com.example.spacex_app.presentation.model.vehicleModel.VehicleModel
+
 
 class VehicleAdapter(
     private val clickListener: (VehicleModel) -> Unit
@@ -31,6 +33,22 @@ class VehicleAdapter(
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.bind(vehicleList[position])
+
+        // TODO: shared element transition
+//        holder.itemView.image_vehicle.transitionName = "thumbnailTransition"
+//        val pair1 =
+//            Pair.create(
+//                holder.itemView.image_vehicle as View?,
+//                holder.itemView.image_vehicle.transitionName
+//            )
+//
+//        val optionsCompat: ActivityOptionsCompat =
+//            ActivityOptionsCompat.makeSceneTransitionAnimation(
+//                holder.itemView.context as Activity,
+//                holder.itemView.image_vehicle,
+//                ViewCompat.getTransitionName(holder.itemView.image_vehicle)!!
+//            )
+//        mContext.startActivity(intent, optionsCompat.toBundle())
     }
 
     class ViewHolder(
@@ -47,6 +65,7 @@ class VehicleAdapter(
         fun bind(model: VehicleModel) {
             item = model
             binding.model = model
+            ViewCompat.setTransitionName(binding.imageVehicle, "image_vehicle_transition");
             if (model.imageUrl != null) {
                 binding.imageVehicle.load(model.imageUrl) {
                     crossfade(true)

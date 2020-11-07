@@ -1,6 +1,7 @@
 package com.example.spacex_app.presentation.fragment
 
 import android.os.Bundle
+import android.view.animation.AnimationUtils
 import coil.load
 import coil.transform.RoundedCornersTransformation
 import com.example.spacex_app.R
@@ -27,6 +28,12 @@ class VehicleDetailsFragment : BaseFragment<VehicleDetailsViewModel>() {
 
         val id = activity?.intent?.getStringExtra("keyVehicleId") ?: ""
         viewModel.getVehicleDetails(id)
+
+        // TODO: shared element transition
+        activity?.window?.sharedElementEnterTransition =
+            android.transition.TransitionInflater.from(requireContext())
+                .inflateTransition(R.transition.shared_element_transation)
+        image_details_vehicle.transitionName = "thumbnailTransition";
     }
 
     private fun observeData() {
@@ -42,6 +49,7 @@ class VehicleDetailsFragment : BaseFragment<VehicleDetailsViewModel>() {
         image_details_vehicle.load(vehicleModel.imageUrl) {
             transformations(RoundedCornersTransformation(14f, 14f, 0f, 0f))
         }
+        image_details_vehicle.startAnimation(AnimationUtils.loadAnimation(context, R.anim.anim))
         text_built_date.text = vehicleModel.buildDate
         text_description.text = vehicleModel.description
         text_vehicle_title.text = vehicleModel.name

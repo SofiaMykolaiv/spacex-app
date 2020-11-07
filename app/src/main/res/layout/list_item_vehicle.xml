@@ -27,6 +27,7 @@
                 android:id="@+id/image_vehicle"
                 android:layout_width="@dimen/image_size_default"
                 android:layout_height="@dimen/image_size_default"
+                android:transitionName="image_vehicle_transition"
                 tools:ignore="ContentDescription"
                 tools:src="@drawable/ic_earth" />
 

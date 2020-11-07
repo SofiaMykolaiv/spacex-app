@@ -46,8 +46,5 @@ class UpcomingFragment : BaseFragment<UpcomingViewModel>() {
         viewModel.errorMessageLiveData.observe(viewLifecycleOwner, { exceptionMessage ->
             showSimpleErrorDialog(context, null, exceptionMessage, null, null)
         })
-        viewModel.loadingLiveData.observe(viewLifecycleOwner, { isLoading ->
-            setLoadingState(isLoading)
-        })
     }
 }

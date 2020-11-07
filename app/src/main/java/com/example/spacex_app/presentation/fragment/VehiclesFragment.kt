@@ -2,7 +2,6 @@ package com.example.spacex_app.presentation.fragment
 
 import android.content.Intent
 import android.os.Bundle
-import androidx.core.os.bundleOf
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.spacex_app.R
 import com.example.spacex_app.presentation.activity.VehicleDetailsActivity
@@ -12,6 +11,7 @@ import com.example.spacex_app.presentation.viewmodel.VehiclesViewModel
 import com.example.spacex_app.utiles.showSimpleErrorDialog
 import kotlinx.android.synthetic.main.fragment_vehicles.*
 import org.koin.android.ext.android.inject
+
 
 class VehiclesFragment : BaseFragment<VehiclesViewModel>() {
 
@@ -47,14 +47,16 @@ class VehiclesFragment : BaseFragment<VehiclesViewModel>() {
         viewModel.errorMessageLiveData.observe(viewLifecycleOwner, { exceptionMessage ->
             showSimpleErrorDialog(context, null, exceptionMessage, null, null)
         })
-        viewModel.loadingLiveData.observe(viewLifecycleOwner, { isLoading ->
-            setLoadingState(isLoading)
-        })
     }
 
     private fun onVehicleClick(vehicleModel: VehicleModel) {
+        // TODO: shared element transition
+//        val options: ActivityOptionsCompat = ActivityOptionsCompat.makeSceneTransitionAnimation(
+//            this,
+//            sharedImageView,
+//            ViewCompat.getTransitionName(sharedImageView)
+//        )
         val intent = Intent(requireContext(), VehicleDetailsActivity::class.java)
-        val bundle = bundleOf("keyVehicleId" to vehicleModel.id)
         intent.putExtra("keyVehicleId", vehicleModel.id)
         startActivity(intent)
     }

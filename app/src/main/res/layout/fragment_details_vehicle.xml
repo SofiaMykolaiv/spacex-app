@@ -24,6 +24,7 @@
             app:layout_constraintTop_toTopOf="parent">
 
             <ImageView
+                android:transitionName="image_vehicle_transition"
                 android:id="@+id/image_details_vehicle"
                 android:layout_width="match_parent"
                 android:layout_height="250dp"
